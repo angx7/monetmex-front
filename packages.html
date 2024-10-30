@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="css/package.css" />
   </head>
   <body>
+    <header>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <h1 class="header-title">Paquetes</h1>
+    </header>
+    <nav id="sidebar-menu">
+      <a href="index.html">Inicio</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="barre.html">Barre</a>
+      <a href="pilates.html">Pilates</a>
+    </nav>
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
     <main>
       <div class="card">
         <div class="card-inner">
@@ -44,13 +55,6 @@
           <div class="card-back">
             <h3>PAQUETES</h3>
 
-            <a href="link_a_una_clase.html" class="package-link">
-              <div class="package">
-                <p class="package-title">UNA CLASE</p>
-                <p class="package-price">$200</p>
-              </div>
-            </a>
-
             <a href="link_paquete_chico.html" class="package-link">
               <div class="package">
                 <p class="package-title">Una clase</p>
@@ -72,6 +76,18 @@
                 <p class="package-title">Ocho clases</p>
                 <p class="package-price">$720</p>
                 <p class="package-description">Vigencia 30 días</p>
+              </div>
+            </a>
+
+            <a href="link_paquete_ilimitado.html" class="package-link">
+              <div class="package">
+                <p class="package-title">PAQUETE ILIMITADO</p>
+                <p class="package-price">
+                  $1299 <span class="original-price">$2,640</span>
+                </p>
+                <p class="package-description">
+                  1 CLASE POR DÍA EN EL MES (Vigencia 30 días)
+                </p>
               </div>
             </a>
           </div>
@@ -129,5 +145,6 @@
         </div>
       </div>
     </main>
+    <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,3 +1,12 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+/*
+------------------------
+start cards style
+------------------------
+*/
 main {
     display: flex;
     flex-wrap: wrap;
@@ -5,12 +14,21 @@ main {
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+    background-color: #E6E0DB;
 }
 
 .card {
     width: 400px;
     height: 700px;
-    perspective: 1000px;
+    perspective: 2400px;
+    /* Mayor perspectiva para un efecto 3D más marcado */
+    transition: transform 0.3s ease;
+    /* Suaviza el movimiento al pasar el cursor */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Efecto de elevar ligeramente la tarjeta */
 }
 
 .card-inner {
@@ -18,7 +36,10 @@ main {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
+    transition: transform 0.6s; /* 0.6s */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    /* Sombra para el efecto 3D */
+    border-radius: 10px;
 }
 
 .card:hover .card-inner {
@@ -132,4 +153,96 @@ main {
     color: #888;
     text-decoration: line-through;
     margin-left: 5px;
+}
+
+/*
+------------------------
+emd cards style
+------------------------
+*/
+
+/* Header */
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Botón de menú en el lado derecho */
+.menu-toggle {
+    font-size: 1.5em;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 1001;
+}
+
+/* Sidebar Menu */
+#sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* Inicia desde el lado derecho */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo translúcido */
+    padding-top: 60px;
+    transform: translateX(100%);
+    /* Oculto fuera de la vista */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para los enlaces del menú */
+#sidebar-menu a {
+    display: block;
+    padding: 15px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+#sidebar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Overlay */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 500;
+}
+
+/* Clase para abrir el menú */
+#sidebar-menu.open {
+    transform: translateX(0);
+    /* Hace visible el menú */
+}
+
+#menu-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
