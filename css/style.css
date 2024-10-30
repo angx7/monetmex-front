@@ -1,0 +1,243 @@
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    line-height: 1.8;
+    overflow-x: hidden;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*======================
+     Nav-bar Styles
+======================*/
+
+header {
+    height: auto;
+    background: rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.header {
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+header .logo {
+    text-align: center;
+}
+
+header .social-icons {
+    float: right;
+    position: relative;
+}
+
+header .social-icons a {
+    margin-left: 25px;
+}
+
+header .social-icons i {
+    font-size: 18px;
+    color: white;
+    margin-left: 8px;
+}
+
+.square {
+    height: auto;
+    width: 50px;
+    margin-top: 4px;
+}
+
+.sticky {
+    z-index: 99;
+    position: fixed;
+    font-weight: 600;
+    top: 0;
+    width: 100%;
+    background: rgba(73, 160, 3, 0.94);
+}
+
+.sticky img {
+    width: 30%;
+    transition-duration: 0.5s;
+    padding: 6px 0;
+}
+
+.sticky .header {
+    transition-duration: 0.5s;
+}
+
+.sticky .social-icons {
+    transition-duration: 0.5s;
+}
+
+header .social-icons i:hover {
+    color: #000000;
+}
+
+.sticky p {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.affix {
+    top: 0;
+    z-index: 9999 !important;
+}
+
+.affix+.container {
+    padding-top: 70px;
+}
+
+.slide-menu .fa-bars {
+    font-size: 28px;
+    margin-left: 28px;
+    float: right;
+    color: #ffffff;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8392156862745098);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 70px;
+}
+
+.sidenav.hided {
+    width: 0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover,
+.sidenav .active {
+    color: #49a003;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.slide-menu {
+    cursor: pointer;
+}
+
+nav p {
+    color: rgba(255, 255, 255, 0.71);
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-bottom: 0;
+}
+
+nav span {
+    color: rgb(255, 255, 255);
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav .another {
+    margin-top: 5px;
+}
+
+header .border-img {
+    position: absolute;
+    opacity: 0.4;
+    bottom: -25px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+        z-index: 9999;
+    }
+
+    .sidenav a {
+        font-size: 14px;
+    }
+}
+
+/* .testheight Not required - unless testing ;) */
+
+.testheight {
+    height: 1200px;
+    font-size: 20px;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.scrolltop {
+    display: none;
+    width: 100%;
+    z-index: 999;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+}
+
+.scroll {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgb(255, 255, 0);
+    padding: 20px;
+    text-align: center;
+    margin: 0 0 0 0;
+    cursor: pointer;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.scroll:hover {
+    background: rgb(0, 0, 0);
+    color: white;
+    transition: 0.5s;
+    -moz-transition: -1.5s;
+    -webkit-transition: -1.5s;
+    -o-transition: -1.5s;
+}
+
+.scroll:hover .fa {
+    padding-top: -10px;
+}
+
+.scroll .fa {
+    font-size: 30px;
+    margin-top: -5px;
+    margin-left: 1px;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+}
