@@ -1,12 +1,27 @@
-/* * {
-    margin: 0;
-    padding: 0;
-} */
 /*
-------------------------
+=======================
 start cards style
-------------------------
+=======================
 */
+
+.encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.encabezado h1 {
+    font-size: 2.5em;
+    /* Ajusta el tamaño según tus preferencias */
+    font-weight: bold;
+    color: #333;
+    /* Color deseado para el texto */
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +30,12 @@ main {
     padding: 20px;
     box-sizing: border-box;
     background-color: #E6E0DB;
+    padding-top: 80px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
 }
 
 .card {
@@ -24,6 +45,7 @@ main {
     /* Mayor perspectiva para un efecto 3D más marcado */
     transition: transform 0.3s ease;
     /* Suaviza el movimiento al pasar el cursor */
+    margin: 12px;
 }
 
 .card:hover {
@@ -156,70 +178,140 @@ main {
 }
 
 /*
-------------------------
+=======================
 emd cards style
-------------------------
+=======================
 */
+ /* Header Fijo */
 
-/* Header */
-/* Header */
+
+ /* Clase que cambia el color al hacer scroll */
+ header.scrolled {
+     background-color: #EFE5E0;
+     /* Color sólido deseado */
+     color: white;
+     /* Color de texto al hacer scroll */
+ }
+
+/* Limitar el ancho y evitar desbordamiento */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1em;
-    background-color: transparent;
-    color: white;
-    position: relative;
-    z-index: 1001;
+    background: #EFE5E0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    z-index: 1002;
 }
 
-/* Botón de menú en el lado derecho */
+/* Alinear los elementos del header */
+/* .header-left {
+    display: flex;
+    align-items: center;
+} */
+
+.header-right,
+.header-left {
+    flex: 0 1 auto;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 105px;
+}
+
+.logo {
+    width: 100px;
+    /* Ajusta el ancho según tus necesidades */
+    height: auto;
+    /* Mantiene la proporción del logo */
+}
+
+.header-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+}
+
+/* Ajustar el botón de menú */
 .menu-toggle {
     font-size: 1.5em;
+    color: black;
     background: none;
-    color: white;
     border: none;
     cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 20px;
-    z-index: 1001;
 }
 
-/* Sidebar Menu */
+/* Asegurarse de que el contenido principal no esté oculto detrás del header */
+main {
+    padding-top: 150px;
+    /* Ajusta según la altura del header */
+    box-sizing: border-box;
+}
+/* Botón de menú en el lado derecho */
+
+.menu-icon {
+    display: inline;
+    /* Muestra el icono de menú al inicio */
+}
+
+.close-icon {
+    display: none;
+    /* Oculta el icono de cierre al inicio */
+}
+
+/* Estilos para el menú lateral */
 #sidebar-menu {
     position: fixed;
     top: 0;
-    right: 0;
-    /* Inicia desde el lado derecho */
-    width: 250px;
+    right: -350px;
+    /* Oculto al inicio */
+    width: 300px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo translúcido */
-    padding-top: 60px;
-    transform: translateX(100%);
-    /* Oculto fuera de la vista */
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transition: right 0.3s ease;
+    z-index: 1003;
+    padding-top: 70px;
+    padding-left: 20px;
 }
 
-/* Estilos para los enlaces del menú */
+#sidebar-menu.active {
+    right: 0;
+    /* Muestra el menú al activar */
+}
+
 #sidebar-menu a {
-    display: block;
-    padding: 15px;
-    font-size: 1.2em;
-    color: white;
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    width: 100%;
-    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
 }
 
 #sidebar-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #ac9595;
+    transition: color 0.3s ease;
+}
+
+/* Icono de cierre dentro del menú */
+#sidebar-menu .close-icon {
+    margin-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
 }
 
 /* Overlay */
@@ -230,19 +322,134 @@ header {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 500;
+    display: none;
+    /* Oculto al inicio */
+    z-index: 1002;
 }
 
-/* Clase para abrir el menú */
-#sidebar-menu.open {
-    transform: translateX(0);
-    /* Hace visible el menú */
+#menu-overlay.active {
+    display: block;
+    /* Muestra el overlay cuando está activo */
 }
 
-#menu-overlay.show {
-    opacity: 1;
-    visibility: visible;
+/* Mostrar el icono de cierre y ocultar el icono de menú cuando el menú esté activo */
+#sidebar-menu.active~.header-right .menu-toggle .menu-icon {
+    display: none;
 }
+
+#sidebar-menu.active~.header-right .menu-toggle .close-icon {
+    display: inline;
+}
+
+#sidebar-menu .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 12px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+/*
+=======================
+    Instagram
+=======================
+*/
+#insta{
+    text-decoration: none;
+    color: #000;
+}
+
+/*
+=======================
+start footer style
+=======================
+*/
+
+.footer {
+    background-color: #d9cdc4;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3f3f3f;
+}
+
+.footer-logo img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #3f3f3f;
+}
+
+.footer-address {
+    font-size: 14px;
+    color: #3f3f3f;
+    text-align: left;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-menu a {
+    font-size: 14px;
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #7d6b6b;
+}
+
+.footer-social a {
+    display: inline-block;
+    font-size: 24px;
+    color: #3f3f3f;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+/*
+=======================
+end footer style
+=======================
+*/

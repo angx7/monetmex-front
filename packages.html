@@ -5,20 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paquetes</title>
     <link rel="stylesheet" href="css/package.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <header>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <h1 class="header-title">Paquetes</h1>
+      <div class="header-center">
+        <img src="src/monetlogo.svg" alt="Monet Logo" class="logo" />
+      </div>
+      <div class="header-right iconos-derecha">
+        <a href="#"
+          ><i
+            class="fab fa-instagram"
+            style="font-size: 34px; padding-right: 15px"
+            id="insta"
+          ></i
+        ></a>
+        <button id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">
+          <span class="menu-icon" style="font-size: 54px">☰</span>
+        </button>
+      </div>
     </header>
-    <nav id="sidebar-menu">
-      <a href="index.html">Inicio</a>
-      <a href="yoga.html">Yoga</a>
-      <a href="barre.html">Barre</a>
-      <a href="pilates.html">Pilates</a>
-    </nav>
+
+    <!-- Menú lateral -->
+    <div id="sidebar-menu">
+      <!-- Ícono de cierre dentro del menú -->
+      <!-- <span class="close-icon" onclick="toggleMenu()">✖</span> -->
+      <a href="javascript:void(0);" class="closebtn" onclick="toggleMenu()"
+        >✖</a
+      >
+      <a href="#">Inicio</a>
+      <a href="#">Clases</a>
+      <a href="#">Paquetes</a>
+      <a href="#">Contáctanos </a>
+      <a href="#">Términos y Condiciones</a>
+      <a href="#">Politicas de privacidad</a>
+    </div>
     <div id="menu-overlay" onclick="toggleMenu()"></div>
+
     <main>
+      <!-- <h1>Paquetes</h1> -->
+      <div class="encabezado">
+        <h1>PAQUETES</h1>
+      </div>
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
@@ -57,7 +88,7 @@
 
             <a href="link_paquete_chico.html" class="package-link">
               <div class="package">
-                <p class="package-title">Una clase</p>
+                <p class="package-title">UNA CLASE</p>
                 <p class="package-price">$110</p>
                 <p class="package-description">Vigencia una semana</p>
               </div>
@@ -65,7 +96,7 @@
 
             <a href="link_paquete_mediano.html" class="package-link">
               <div class="package">
-                <p class="package-title">Tres clases</p>
+                <p class="package-title">TRES CLASES</p>
                 <p class="package-price">$299</p>
                 <p class="package-description">Vigencia 15 días</p>
               </div>
@@ -73,7 +104,7 @@
 
             <a href="link_paquete_ilimitado.html" class="package-link">
               <div class="package">
-                <p class="package-title">Ocho clases</p>
+                <p class="package-title">OCHO CLASES</p>
                 <p class="package-price">$720</p>
                 <p class="package-description">Vigencia 30 días</p>
               </div>
@@ -83,7 +114,8 @@
               <div class="package">
                 <p class="package-title">PAQUETE ILIMITADO</p>
                 <p class="package-price">
-                  $1299 <span class="original-price">$2,640</span>
+                  $1299
+                  <!--span class="original-price">$2,640</span> -->
                 </p>
                 <p class="package-description">
                   1 CLASE POR DÍA EN EL MES (Vigencia 30 días)
@@ -105,46 +137,86 @@
             <a href="link_a_una_clase.html" class="package-link">
               <div class="package">
                 <p class="package-title">UNA CLASE</p>
-                <p class="package-price">$200</p>
+                <p class="package-price">$140</p>
+                <p class="package-description">Vigencia una semana</p>
               </div>
             </a>
 
             <a href="link_paquete_chico.html" class="package-link">
               <div class="package">
-                <p class="package-title">PAQUETE CHICO</p>
-                <p class="package-price">$1,520</p>
-                <p class="package-description">8 CLASES</p>
+                <p class="package-title">TRES CLASES</p>
+                <p class="package-price">$399</p>
+                <p class="package-description">Vigencia 15 días</p>
               </div>
             </a>
 
             <a href="link_paquete_mediano.html" class="package-link">
               <div class="package">
-                <p class="package-title">PAQUETE MEDIANO</p>
-                <p class="package-price">$2,040</p>
-                <p class="package-description">12 CLASES</p>
+                <p class="package-title">OCHO CLASES</p>
+                <p class="package-price">$999</p>
+                <p class="package-description">Vigencia 30 días</p>
+              </div>
+            </a>
+
+            <a href="link_paquete_mediano.html" class="package-link">
+              <div class="package">
+                <p class="package-title">DOCE CLASES</p>
+                <p class="package-price">$1420</p>
+                <p class="package-description">Vigencia 30 días</p>
               </div>
             </a>
 
             <a href="link_paquete_ilimitado.html" class="package-link">
               <div class="package">
-                <p class="package-title">PAQUETE ILIMITADO 20% OFF</p>
+                <p class="package-title">PAQUETE ILIMITADO</p>
                 <p class="package-price">
-                  $2,112 <span class="original-price">$2,640</span>
+                  $2,199 <span class="original-price">$2,640</span>
                 </p>
-                <p class="package-description">1 CLASE POR DÍA EN EL MES</p>
-              </div>
-            </a>
-
-            <a href="link_clases_personalizadas.html" class="package-link">
-              <div class="package">
-                <p class="package-title">¿CLASES PERSONALIZADAS?</p>
-                <p class="package-description">CHECA NUESTROS PAQUETES</p>
+                <p class="package-description">
+                  1 CLASE POR DÍA EN EL MES (Vigencia 30 días)
+                </p>
               </div>
             </a>
           </div>
         </div>
       </div>
     </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="src/monetlogo.svg"
+            alt="Monet Pilates Studio"
+            style="width: 170px; height: auto"
+          />
+        </div>
+        <div class="footer-address">
+          <p>
+            Federico Medrano #618-C<br />
+            Zona Centro<br />
+            San Francisco del Rincón, Gto.<br />
+            C.P 36300<br />
+            Plaza Adhara local 5 y 6
+          </p>
+          <p>© 2024 Monet</p>
+        </div>
+        <div class="footer-menu">
+          <a href="#">Inicio</a>
+          <a href="#">Clases</a>
+          <a href="#">Paquetes</a>
+          <a href="#">Contáctanos</a>
+        </div>
+        <div class="footer-social">
+          <a href="#"
+            ><i
+              class="fab fa-instagram"
+              style="font-size: 34px; padding-right: 15px"
+              id="insta"
+            ></i
+          ></a>
+        </div>
+      </div>
+    </footer>
     <script src="js/index.js"></script>
   </body>
 </html>
