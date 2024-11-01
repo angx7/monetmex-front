@@ -66,7 +66,7 @@
 /* Estilos para la sección de bienvenida */
 .welcome-section {
     padding:  50px; /* Elimina el padding lateral para acercarlo a los bordes */
-    background-color: #f9f9f9; /* Color de fondo */
+    background-color: #f9f9f9 !important; /* Color de fondo */
 }
 
 .welcome-text {
