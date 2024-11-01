@@ -4,6 +4,28 @@ start cards style
 =======================
 */
 
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    nav {
+        padding: 1em;
+        /* 16px */
+    }
+
+    main {
+        flex: 1;
+    }
+
+    footer {
+        padding: 1em;
+    }
+}
+
 .encabezado {
     display: flex;
     justify-content: center;
@@ -33,10 +55,6 @@ main {
     padding-top: 80px;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-}
 
 .card {
     width: 400px;
@@ -96,13 +114,15 @@ main {
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.5em;
-    color: white;
+    font-size: 1.8em;
+    color: #000;
     font-weight: bold;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
+    background: #E2D8CF;
+    padding: 5px 110px;
     border-radius: 5px;
     text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .card-back {
