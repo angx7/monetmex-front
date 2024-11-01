@@ -1,0 +1,136 @@
+/* Estilos para el contenedor del círculo */
+.circle {
+    position: relative;
+    width: 150px;  /* Ajusta el tamaño según sea necesario */
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Asignar imágenes a cada círculo */
+.box-1 .circle {
+    background-image: url('https://www.vital-balance.com/wp-content/uploads/2020/04/pilates.jpg'); /* Reemplaza con la ruta de la imagen */
+}
+
+.box-2 .circle {
+    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg'); /* Reemplaza con la ruta de la imagen */
+}
+
+.box-3 .circle {
+    background-image: url('https://res.cloudinary.com/freshis/image/upload/v1680104224/yoga2_cd62409471.jpg'); /* Reemplaza con la ruta de la imagen */
+}
+
+/* Estilo para los círculos alineados en fila */
+.clases .d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  /* Espacio entre círculos */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea en pantallas pequeñas */
+}
+
+/* Texto debajo de cada círculo */
+.circle + p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 95px;
+}
+
+/* Contenedor de cada círculo y su texto */
+.box-1, .box-2, .box-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilos para el carrusel */
+.carousel-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carousel-inner img {
+    max-height: 500px; /* Ajusta según tus necesidades */
+    object-fit: cover;
+}
+
+
+/* Estilos para la sección de bienvenida */
+.welcome-section {
+    padding:  50px; /* Elimina el padding lateral para acercarlo a los bordes */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+.welcome-text {
+    max-width: 600px; /* Ancho máximo del texto */
+    margin-left: 20px; /* Acerca el texto al borde izquierdo */
+    text-align: left;
+    color: #5c4533; /* Color del texto */
+}
+
+.welcome-text h1 {
+    font-size: 50px;
+    font-family: 'Georgia', serif;
+    color: #a2836e; /* Color del título */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.welcome-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-family: 'Georgia', serif;
+    color: #5c4533;
+}
+
+
+.welcome-text p:first-of-type {
+    margin-top: 50px;
+}
+
+
+/* Estilos para la galería de imágenes */
+
+.image-gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Espacio entre imágenes */
+    margin-top: 20px;
+}
+
+.image-container {
+    text-align: center;
+    max-width: 150px; /* Ajusta el tamaño máximo si es necesario */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+.image-container p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555; /* Color de texto */
+}
+
+.image-container h3 {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555; /* Color de texto */
+}
