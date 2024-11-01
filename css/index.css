@@ -134,3 +134,45 @@
     font-size: 15px;
     color: #555; /* Color de texto */
 }
+
+
+
+/* Estilos generales para la sección de botones */
+.button-section {
+    padding: 20px 0;
+    
+}
+
+.button-section .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 10px;
+}
+
+/* Estilo para el botón primario */
+.button-section .btn-primary {
+    background-color: #d7d2c5;
+    color: #ffffff;
+    border: none;
+}
+
+.button-section .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilo para el botón secundario */
+.button-section .btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+}
+
+.button-section .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
