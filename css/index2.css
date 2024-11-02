@@ -1,22 +1,8 @@
-:root {
-    --main-bg-color: #f9f9f9;
-    --text-color: #5c4533;
-    --highlight-color: #a2836e;
-    --button-bg: #cab9ac;
-    --button-hover-bg: #b58e76;
-    --circle-size: 150px;
-    --font-main: 'Georgia', serif;
-}
-
-h2, h3{
-    margin-bottom: 2rem !important;
-}
-
 /* Estilos para el contenedor del círculo */
 .circle {
     position: relative;
-    width: var(--circle-size);
-    height: var(--circle-size);
+    width: 150px;  /* Ajusta el tamaño según sea necesario */
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -29,15 +15,15 @@ h2, h3{
 
 /* Asignar imágenes a cada círculo */
 .box-1 .circle {
-    background-image: url('https://www.vital-balance.com/wp-content/uploads/2020/04/pilates.jpg');
+    background-image: url('https://www.vital-balance.com/wp-content/uploads/2020/04/pilates.jpg'); /* Reemplaza con la ruta de la imagen */
 }
 
 .box-2 .circle {
-    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg');
+    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg'); /* Reemplaza con la ruta de la imagen */
 }
 
 .box-3 .circle {
-    background-image: url('https://res.cloudinary.com/freshis/image/upload/v1680104224/yoga2_cd62409471.jpg');
+    background-image: url('https://res.cloudinary.com/freshis/image/upload/v1680104224/yoga2_cd62409471.jpg'); /* Reemplaza con la ruta de la imagen */
 }
 
 /* Estilo para los círculos alineados en fila */
@@ -45,8 +31,8 @@ h2, h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 20px;  /* Espacio entre círculos */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea en pantallas pequeñas */
 }
 
 /* Texto debajo de cada círculo */
@@ -54,23 +40,11 @@ h2, h3{
     text-align: center;
     font-size: 16px;
     margin-top: 10px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-    .circle + p {
-        margin-left: 5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .circle + p {
-        margin-left: 5rem;
-    }
+    margin-left: 95px;
 }
 
 /* Contenedor de cada círculo y su texto */
-.box-1,
-.box-2,
-.box-3 {
+.box-1, .box-2, .box-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,27 +58,28 @@ h2, h3{
 }
 
 .carousel-inner img {
-    max-height: 500px;
+    max-height: 500px; /* Ajusta según tus necesidades */
     object-fit: cover;
 }
 
+
 /* Estilos para la sección de bienvenida */
 .welcome-section {
-    padding: 50px;
-    background-color: var(--main-bg-color) !important;
+    padding:  50px; /* Elimina el padding lateral para acercarlo a los bordes */
+    background-color: #f9f9f9 !important; /* Color de fondo */
 }
 
 .welcome-text {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 600px; /* Ancho máximo del texto */
+    margin-left: 20px; /* Acerca el texto al borde izquierdo */
     text-align: left;
-    color: var(--text-color);
+    color: #5c4533; /* Color del texto */
 }
 
 .welcome-text h1 {
     font-size: 50px;
-    font-family: var(--font-main);
-    color: var(--highlight-color);
+    font-family: 'Georgia', serif;
+    color: #a2836e; /* Color del título */
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -113,15 +88,18 @@ h2, h3{
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 50px;
-    font-family: var(--font-main);
-    color: var(--text-color);
+    font-family: 'Georgia', serif;
+    color: #5c4533;
 }
+
 
 .welcome-text p:first-of-type {
     margin-top: 50px;
 }
 
+
 /* Estilos para la galería de imágenes */
+
 .image-gallery {
     padding: 20px;
     text-align: center;
@@ -130,33 +108,39 @@ h2, h3{
 .image-row {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 100px; /* Espacio entre imágenes */
     margin-top: 20px;
-    flex-wrap: wrap;
 }
 
 .image-container {
     text-align: center;
-    max-width: 100px;
-    flex: 1 1 100px;
+    max-width: 150px; /* Ajusta el tamaño máximo si es necesario */
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 8px; /* Opcional: bordes redondeados */
 }
 
-.image-container h3,
 .image-container p {
     margin-top: 8px;
     font-size: 15px;
-    color: #555;
+    color: #555; /* Color de texto */
 }
+
+.image-container h3 {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555; /* Color de texto */
+}
+
+
 
 /* Estilos generales para la sección de botones */
 .button-section {
     padding: 20px 0;
+    
 }
 
 .button-section .btn {
@@ -170,41 +154,25 @@ h2, h3{
 
 /* Estilo para el botón primario */
 .button-section .btn-primary {
-    background-color: var(--button-bg);
-    color: #000;
+    background-color: #d7d2c5;
+    color: #ffffff;
     border: none;
 }
 
-.button-section .btn-primary span {
-    margin-left: 1rem;
-}
-
 .button-section .btn-primary:hover {
-    background-color: var(--button-hover-bg);
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .welcome-text h1 {
-        font-size: 36px;
-    }
-
-    .welcome-section {
-        padding: 20px;
-    }
-
-    .image-row {
-        gap: 20px;
-    }
-
-    .image-container {
-        max-width: 80px;
-    }
-
-    .button-section .btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
+/* Estilo para el botón secundario */
+.button-section .btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
 }
+
+.button-section .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+

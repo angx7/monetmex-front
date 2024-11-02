@@ -320,6 +320,9 @@ main {
     display: block;
     transition: 0.3s;
 }
+#sidebar-menu a:visited {
+    color: #fff !important;
+}
 
 #sidebar-menu a:hover {
     color: #ac9595 !important;
@@ -489,3 +492,81 @@ start footer style
 end footer style
 =======================
 */
+
+/*
+=======================
+movil style
+=======================
+*/
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        width: 80px;
+        /* Reduce logo size on mobile */
+    }
+
+    .encabezado h1 {
+        font-size: 1.8em;
+        /* Adjust title size */
+    }
+
+    /* Card Adjustments */
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title {
+        padding: 5px 10px;
+        font-size: 1.2em;
+        /* Reduce card title size */
+    }
+
+    .card-back {
+        padding: 10px;
+    }
+
+    /* Sidebar Adjustments */
+    #sidebar-menu {
+        width: 250px;
+        /* Reduce sidebar width */
+    }
+
+    /* Footer Adjustments */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo,
+    .footer-address,
+    .footer-menu,
+    .footer-social {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-menu {
+        gap: 5px;
+    }
+
+    /* Package Adjustments */
+    .package {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .package-title {
+        font-size: 1em;
+    }
+
+    .package-price,
+    .package-description {
+        font-size: 0.8em;
+    }
+}
