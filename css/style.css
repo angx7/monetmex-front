@@ -241,3 +241,71 @@ header .border-img {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
 }
+
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    text-align: center;
+    max-width: 100px;
+    flex: 1 1 100px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-container h3,
+.image-container p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
+}
+
+/*media query*/
+
+/* Galería de imágenes */
+.image-gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container {
+    text-align: center;
+    max-width: 200px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-container h3,
+.image-container p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
+}
