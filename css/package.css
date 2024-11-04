@@ -499,6 +499,7 @@ movil style
 =======================
 */
 
+
 /* General Mobile Adjustments */
 @media (max-width: 768px) {
     body {
@@ -507,7 +508,7 @@ movil style
     }
 
     .logo {
-        width: 80px;
+        width: 94px;
         /* Reduce logo size on mobile */
     }
 
@@ -568,5 +569,13 @@ movil style
     .package-price,
     .package-description {
         font-size: 0.8em;
+    }
+
+    .insta{
+        font-size: 24px !important;
+    }
+
+    .btnmenu{
+        font-size: 2.5rem !important;
     }
 }
