@@ -320,9 +320,6 @@ main {
     display: block;
     transition: 0.3s;
 }
-#sidebar-menu a:visited {
-    color: #fff !important;
-}
 
 #sidebar-menu a:hover {
     color: #ac9595 !important;
@@ -492,14 +489,6 @@ start footer style
 end footer style
 =======================
 */
-
-/*
-=======================
-movil style
-=======================
-*/
-
-
 /* General Mobile Adjustments */
 @media (max-width: 768px) {
     body {
@@ -519,8 +508,8 @@ movil style
 
     /* Card Adjustments */
     .card {
-        width: 100%;
-        height: auto;
+        width: 400px;
+        height: 600px;
     }
 
     .card-title {
@@ -571,11 +560,11 @@ movil style
         font-size: 0.8em;
     }
 
-    .insta{
+    .insta {
         font-size: 24px !important;
     }
 
-    .btnmenu{
+    .btnmenu {
         font-size: 2.5rem !important;
     }
 }

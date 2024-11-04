@@ -289,3 +289,687 @@ h3 {
         margin-right: 15% !important;
     }
 }
+
+
+
+/* No se que poner aqui */
+:root {
+    --main-bg-color: #f9f9f9;
+    --text-color: #5c4533;
+    --highlight-color: #a2836e;
+    --button-bg: #cab9ac;
+    --button-hover-bg: #b58e76;
+    --circle-size: 150px;
+    --font-main: 'Georgia', serif;
+}
+
+/* Estilos Generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    padding-top: 150px !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #E6E0DB;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background: #EFE5E0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    z-index: 1002;
+}
+
+header.scrolled {
+    background-color: #EFE5E0;
+    color: white;
+}
+
+/* Títulos */
+.encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.encabezado h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para los círculos */
+.circle {
+    position: relative;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Asignar imágenes a cada círculo */
+.box-1 .circle {
+    background-image: url('https://www.vital-balance.com/wp-content/uploads/2020/04/pilates.jpg');
+}
+
+.box-2 .circle {
+    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg');
+}
+
+.box-3 .circle {
+    background-image: url('https://res.cloudinary.com/freshis/image/upload/v1680104224/yoga2_cd62409471.jpg');
+}
+
+/* Texto debajo de cada círculo */
+.circle+p {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Estilos para el contenedor de círculos alineados en fila */
+.clases .d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilos de bienvenida */
+.welcome-section {
+    padding: 50px;
+    background-color: var(--main-bg-color) !important;
+}
+
+.welcome-text {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.welcome-text h1 {
+    font-size: 50px;
+    font-family: var(--font-main);
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.welcome-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-family: var(--font-main);
+    color: var(--text-color);
+}
+
+.welcome-text p:first-of-type {
+    margin-top: 50px;
+}
+
+/* Galería de imágenes */
+.image-gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container {
+    text-align: center;
+    max-width: 200px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-container h3,
+.image-container p {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
+}
+
+/* Sección de botones */
+.button-section {
+    padding: 20px 0;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-section .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 10px;
+}
+
+.button-section .btn-primary {
+    background-color: var(--button-bg);
+    color: #000;
+}
+
+.button-section .btn-primary:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+/* Estilos para el carrusel */
+.carousel-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carousel-inner img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.btn-primary {
+    --bs-btn-border-color: transparent !important;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .welcome-text h1 {
+        font-size: 36px;
+    }
+
+    .welcome-section {
+        padding: 20px;
+    }
+
+    .image-container {
+        max-width: 100px;
+    }
+
+    .button-section .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .image-container h3,
+    .image-container p {
+        margin-top: 8px;
+        font-size: 20px;
+    }
+
+    .button-section .btn-primary span {
+        font-size: 12px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-text h1 {
+        font-size: 28px;
+    }
+
+    .welcome-text p {
+        font-size: 16px;
+    }
+
+    .image-container {
+        max-width: 80px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .package-title,
+    .package-price,
+    .package-description {
+        font-size: 0.8em;
+    }
+}
+
+
+/*
+=======================
+emd cards style
+=======================
+*/
+/* Header Fijo */
+/* Clase que cambia el color al hacer scroll */
+header.scrolled {
+    background-color: #EFE5E0;
+    /* Color sólido deseado */
+    color: white;
+    /* Color de texto al hacer scroll */
+}
+
+/* Limitar el ancho y evitar desbordamiento */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background: #EFE5E0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    z-index: 1002;
+}
+
+/* Alinear los elementos del header */
+/* .header-left {
+    display: flex;
+    align-items: center;
+} */
+
+.header-right,
+.header-left {
+    flex: 0 1 auto;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 105px;
+}
+
+.logo {
+    width: 100px;
+    /* Ajusta el ancho según tus necesidades */
+    height: auto;
+    /* Mantiene la proporción del logo */
+}
+
+.header-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+}
+
+/* Ajustar el botón de menú */
+.menu-toggle {
+    font-size: 1.5em;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Asegurarse de que el contenido principal no esté oculto detrás del header */
+main {
+    padding-top: 150px;
+    /* Ajusta según la altura del header */
+    box-sizing: border-box;
+}
+
+/* Botón de menú en el lado derecho */
+
+.menu-icon {
+    display: inline;
+    /* Muestra el icono de menú al inicio */
+}
+
+.close-icon {
+    display: none;
+    /* Oculta el icono de cierre al inicio */
+}
+
+/* Estilos para el menú lateral */
+#sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    /* Oculto al inicio */
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white !important;
+    transition: right 0.3s ease;
+    z-index: 1003;
+    padding-top: 70px;
+    padding-left: 20px;
+}
+
+#sidebar-menu.active {
+    right: 0;
+    /* Muestra el menú al activar */
+}
+
+#sidebar-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff !important;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar-menu a:visited {
+    color: #fff !important;
+}
+
+#sidebar-menu a:hover {
+    color: #ac9595 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Icono de cierre dentro del menú */
+#sidebar-menu .close-icon {
+    margin-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white !important;
+}
+
+/* Overlay */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Oculto al inicio */
+    z-index: 1002;
+}
+
+#menu-overlay.active {
+    display: block;
+    /* Muestra el overlay cuando está activo */
+}
+
+/* Mostrar el icono de cierre y ocultar el icono de menú cuando el menú esté activo */
+#sidebar-menu.active~.header-right .menu-toggle .menu-icon {
+    display: none;
+}
+
+#sidebar-menu.active~.header-right .menu-toggle .close-icon {
+    display: inline;
+}
+
+#sidebar-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: 12px;
+}
+
+.closebtn:visited {
+    color: white !important;
+}
+
+.closebtn {
+    color: inherit !important;
+    /* Asegura que el color del enlace no cambie */
+    text-decoration: none !important;
+    /* Elimina cualquier subrayado o estilo predeterminado */
+}
+
+#sidebar-menu .closebtn .close-icon {
+    color: white !important;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff !important;
+    display: block;
+    transition: 0.3s;
+}
+
+/*
+=======================
+    Instagram
+=======================
+*/
+#insta {
+    text-decoration: none;
+    color: #000;
+}
+
+/*
+=======================
+start footer style
+=======================
+*/
+
+.footer {
+    background-color: #d9cdc4;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3f3f3f;
+}
+
+.footer-logo img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #3f3f3f;
+}
+
+.footer-address {
+    font-size: 14px;
+    color: #3f3f3f;
+    text-align: left;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-menu a {
+    font-size: 14px;
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #7d6b6b;
+}
+
+.footer-social a {
+    display: inline-block;
+    font-size: 24px;
+    color: #3f3f3f;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+/*
+=======================
+end footer style
+=======================
+*/
+
+/*
+=======================
+movil style
+=======================
+*/
+
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        width: 94px;
+        /* Reduce logo size on mobile */
+    }
+
+    .encabezado h1 {
+        font-size: 1.8em;
+        /* Adjust title size */
+    }
+
+    /* Card Adjustments */
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-title {
+        padding: 5px 10px;
+        font-size: 1.2em;
+        /* Reduce card title size */
+    }
+
+    .card-back {
+        padding: 10px;
+    }
+
+    /* Sidebar Adjustments */
+    #sidebar-menu {
+        width: 250px;
+        /* Reduce sidebar width */
+    }
+
+    /* Footer Adjustments */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-logo,
+    .footer-address,
+    .footer-menu,
+    .footer-social {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-menu {
+        gap: 5px;
+    }
+
+    /* Package Adjustments */
+    .package {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .package-title {
+        font-size: 1em;
+    }
+
+    .package-price,
+    .package-description {
+        font-size: 0.8em;
+    }
+
+    .insta {
+        font-size: 24px !important;
+    }
+
+    .btnmenu {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: 100%;
+        /* Full width for mobile */
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #sidebar-menu {
+        width: 200px;
+    }
+
+    .image-container {
+        width: 45%;
+        /* Adjust for smaller screens */
+    }
+}
