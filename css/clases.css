@@ -63,7 +63,7 @@
 .reserve-button {
     text-align: center;
     display: block;
-    margin: 10px auto;
+    margin: 10px auto !important;
 }
 
 /* Botón de reservar */
