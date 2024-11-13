@@ -1,18 +1,3 @@
-// function toggleMenu() {
-//   const sidebar = document.getElementById("sidebar-menu");
-//   const overlay = document.getElementById("menu-overlay");
-//   sidebar.classList.toggle("open");
-//   overlay.classList.toggle("show");
-// }
-
-// function openMenu() {
-//   document.getElementById("sidebar").classList.add("show");
-// }
-
-// function closeMenu() {
-//   document.getElementById("sidebar").classList.remove("show");
-// }
-
 function toggleMenu() {
   const sidebarMenu = document.getElementById("sidebar-menu");
   const menuOverlay = document.getElementById("menu-overlay");
@@ -41,3 +26,25 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+
+/*
+=====================================================
+    Validación de solo numeros
+=====================================================
+*/
+
+function valideKey(evt) {
+  // code is the decimal ASCII representation of the pressed key.
+  var code = evt.which ? evt.which : evt.keyCode;
+
+  if (code == 8 || code == 46) {
+    // backspace. and point
+    return true;
+  } else if (code >= 48 && code <= 57) {
+    // is a number.
+    return true;
+  } else {
+    // other keys.
+    return false;
+  }
+}

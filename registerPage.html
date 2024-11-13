@@ -40,6 +40,7 @@
       <a href="javascript:void(0);" class="closebtn" onclick="toggleMenu()"
         ><span class="close-icon">x</span></a
       >
+      <a href="registerPage.html" id="login-link">Iniciar Sesión</a>
       <a href="index.html">Inicio</a>
       <a href="clases.html">Clases</a>
       <a href="packages.html">Paquetes</a>
@@ -56,21 +57,42 @@
         <div class="signup">
           <form>
             <label for="chk" aria-hidden="true">Registrarse</label>
-            <input type="text" name="txt" placeholder="User name" required="" />
+            <input type="text" name="txt" placeholder="Nombre" required="" />
             <input type="email" name="email" placeholder="Email" required="" />
             <input
-              type="number"
-              name="broj"
-              placeholder="BrojTelefona"
+              type="text"
+              id="telefono"
+              name="numeric"
+              placeholder="Número de teléfono"
+              onkeypress="return valideKey(event)"
               required=""
+              maxlength="10"
             />
-            <input
-              type="password"
-              name="pswd"
-              placeholder="Password"
-              required=""
-            />
-            <button class="btnRegisterPage">Crear cuenta</button>
+            <div class="password-container">
+              <input
+                type="password"
+                name="pswd"
+                placeholder="Contraseña"
+                required=""
+                id="password"
+              />
+            </div>
+            <script>
+              const togglePassword = document.querySelector("#togglePassword");
+              const password = document.querySelector("#password");
+
+              togglePassword.addEventListener("click", function (e) {
+                // toggle the type attribute
+                const type =
+                  password.getAttribute("type") === "password"
+                    ? "text"
+                    : "password";
+                password.setAttribute("type", type);
+                // toggle the eye slash icon
+                this.classList.toggle("fa-eye-slash");
+              });
+            </script>
+            <button type="submit" class="btnRegisterPage">Crear cuenta</button>
           </form>
         </div>
 
@@ -81,7 +103,7 @@
             <input
               type="password"
               name="pswd"
-              placeholder="Password"
+              placeholder="Contraseña"
               required=""
             />
             <button class="btnRegisterPage">Iniciar Sesión</button>
@@ -130,7 +152,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Simulación de verificación de inicio de sesión
+      const isLoggedIn = true; // Cambia esto según el estado real de inicio de sesión
+      const userName = "Angel Becerra"; // Nombre del usuario si está logueado
 
+      const loginLink = document.getElementById("login-link");
+
+      if (isLoggedIn) {
+        loginLink.textContent = userName;
+        loginLink.href = "javascript:void(0);"; // Evita la redirección
+        loginLink.addEventListener("click", function () {
+          if (confirm("¿Quieres cerrar sesión?")) {
+            // Aquí puedes agregar la lógica para cerrar sesión
+            alert("Sesión cerrada");
+            isLoggedIn = false;
+          }
+        });
+      }
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>
