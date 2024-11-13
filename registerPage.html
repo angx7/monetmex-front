@@ -99,14 +99,23 @@
         <div class="login">
           <form>
             <label for="chk" aria-hidden="true">Iniciar Sesión</label>
-            <input type="email" name="email" placeholder="Email" required="" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required=""
+              id="txtLogEmail"
+            />
             <input
               type="password"
               name="pswd"
               placeholder="Contraseña"
               required=""
+              id="txtlogPass"
             />
-            <button class="btnRegisterPage">Iniciar Sesión</button>
+            <button type="button" class="btnRegisterPage" onclick="login()">
+              Iniciar Sesión
+            </button>
           </form>
         </div>
       </div>
@@ -154,7 +163,7 @@
     </footer>
     <script>
       // Simulación de verificación de inicio de sesión
-      const isLoggedIn = true; // Cambia esto según el estado real de inicio de sesión
+      const isLoggedIn = false; // Cambia esto según el estado real de inicio de sesión
       const userName = "Angel Becerra"; // Nombre del usuario si está logueado
 
       const loginLink = document.getElementById("login-link");
@@ -172,5 +181,6 @@
       }
     </script>
     <script src="js/index.js"></script>
+    <script src="js/registerModule.js"></script>
   </body>
 </html>
