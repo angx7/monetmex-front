@@ -3,6 +3,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    background-color: #E6E0DB;
 
     min-height: 100vh;
 
@@ -149,6 +150,8 @@ start cards style
     color: #fff;
     margin-bottom: 15px;
     text-align: center;
+   
+    
 }
 
 .package-link {
@@ -169,6 +172,7 @@ start cards style
     justify-content: center;
     transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
+    font-family: "Montserrat", sans-serif;
 }
 
 .package:hover {

@@ -1,8 +1,14 @@
+body {
+     background-color: #E6E1DB;;
+}
+
+
 /* Estilo de la sección de Pilates Reformer */
 .pilates-section {
     width: 100%;
-    margin: 0;
     padding: 0;
+    margin: 0 0 70px 0; /* Espacio mayor entre secciones */
+
 }
 
 /* Imagen de fondo y título */
@@ -36,6 +42,7 @@
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     text-align: center;
+    font-family: Georgia, serif;
 }
 
 /* Contenedor de la descripción debajo de la imagen */
@@ -49,12 +56,14 @@
 
 .description-container h2 {
     font-size: 1.8rem;
+    font-family: sans-serif;
     margin-bottom: 10px;
     color: #333;
 }
 
 .description-container p {
     margin: 8px 0;
+    font-family: "Montserrat", sans-serif;
     line-height: 1.5;
 }
 
@@ -63,7 +72,7 @@
 .reserve-button {
     text-align: center;
     display: block;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
 }
 
 /* Botón de reservar */
@@ -76,6 +85,7 @@
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 .reserve-button:hover {

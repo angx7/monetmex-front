@@ -6,6 +6,7 @@
 
 body, html {
     height: 100%;
+    background-color:#E6E1DB ;
 }
 
 .container {
@@ -17,13 +18,17 @@ body, html {
 
 h2 {
     margin: 20px 0 10px; /* Espaciado arriba y abajo */
-    font-size: 1.2em;
+    font-size: 1.8em;
     font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+
 }
 
 p {
     margin: 5px 0;
     line-height: 1.6; /* Para mejorar la legibilidad */
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
 }
 
 p + h2 {
