@@ -1,8 +1,14 @@
+body {
+    background-color: #E6E1DB;
+}
+
 /* Estilo de la sección de Pilates Reformer */
 .pilates-section {
     width: 100%;
-    margin: 0;
     padding: 0;
+    margin: 0 0 70px 0;
+    /* Espacio mayor entre secciones */
+
 }
 
 /* Imagen de fondo y título */
@@ -23,11 +29,13 @@
 }
 
 .Barre-class {
-    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg'); /* Cambia esta URL por la imagen de yoga */
+    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg');
+    /* Cambia esta URL por la imagen de yoga */
 }
 
 .yoga-class {
-    background-image: url('https://www.hola.com/horizon/landscape/1402a5bcf3b6-hatha-yoga-1t-t.jpg'); /* Cambia esta URL por la imagen de meditación */
+    background-image: url('https://www.hola.com/horizon/landscape/1402a5bcf3b6-hatha-yoga-1t-t.jpg');
+    /* Cambia esta URL por la imagen de meditación */
 }
 
 .title {
@@ -36,6 +44,7 @@
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     text-align: center;
+    font-family: Georgia, serif;
 }
 
 /* Contenedor de la descripción debajo de la imagen */
@@ -49,12 +58,14 @@
 
 .description-container h2 {
     font-size: 1.8rem;
+    font-family: sans-serif;
     margin-bottom: 10px;
     color: #333;
 }
 
 .description-container p {
     margin: 8px 0;
+    font-family: "Montserrat", sans-serif;
     line-height: 1.5;
 }
 
@@ -63,7 +74,7 @@
 .reserve-button {
     text-align: center;
     display: block;
-    margin: 10px auto !important;
+    margin: 10px auto 20px auto !important;
 }
 
 /* Botón de reservar */
@@ -76,6 +87,7 @@
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 .reserve-button:hover {
@@ -91,10 +103,10 @@
         /* font-size: 10px; */
     }
 
-    .description-container h2{
+    .description-container h2 {
         font-size: 2rem;
     }
-    
+
     .description-container p {
         font-size: 1.5rem;
         /* font-size: 10px; */
@@ -122,15 +134,16 @@
         margin-left: -50rem;
     }
 
-    .description-container h2{
+    .description-container h2 {
         font-size: 4rem;
     }
-    
+
     .description-container p {
         font-size: 2rem;
         /* font-size: 10px; */
     }
-    .reserve-button{
+
+    .reserve-button {
         width: 60%;
         font-size: 2rem;
     }
@@ -163,8 +176,8 @@ header {
 
 /* Alinear los elementos del header */
 /* .header-left {
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 } */
 
 .header-right,
@@ -335,7 +348,7 @@ main {
 
 /*
 =======================
-    Instagram
+   Instagram
 =======================
 */
 #insta {
@@ -445,6 +458,7 @@ movil style
         width: 94px;
         /* Reduce logo size on mobile */
     }
+
     /* Sidebar Adjustments */
     #sidebar-menu {
         width: 250px;
