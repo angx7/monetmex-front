@@ -653,10 +653,11 @@ start footer style
 }
 
 .footer-address {
-    font-size: 14px;
+    font-size: 14px !important;
     color: #3f3f3f;
     text-align: left;
 }
+
 
 .footer-menu {
     display: flex;
@@ -769,9 +770,9 @@ movil style
         font-size: 0.8em;
     }
 
-    .insta {
+    /* .insta {
         font-size: 24px !important;
-    }
+    } */
 
     .btnmenu {
         font-size: 2.5rem !important;
@@ -887,7 +888,7 @@ movil style
 
     .footer-address,
     .footer-menu a {
-        font-size: 18px;
+        font-size: 18px ;
         /* Ajusta el tamaño del texto en el pie de página */
     }
 

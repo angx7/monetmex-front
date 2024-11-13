@@ -35,3 +35,8 @@ p + h2 {
     margin-top: 20px; /* Espacio adicional entre cada sección */
 }
 
+.footer-address p {
+    font-size: 14px !important;
+    color: #3f3f3f;
+    /* text-align: left; */
+}
