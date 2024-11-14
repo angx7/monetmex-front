@@ -29,6 +29,7 @@ body {
 
 .Barre-class {
   background-image: url("../src/_DSC9782.jpg");
+  background-position: center -100px;
   /* Cambia esta URL por la imagen de yoga */
 }
 
@@ -442,6 +443,12 @@ movil style
   body {
     margin: 0;
     padding: 0;
+  }
+
+  .Barre-class {
+    background-image: url("../src/_DSC9782.jpg");
+    background-position: center !important;
+    /* Cambia esta URL por la imagen de yoga */
   }
 
   .logo {
