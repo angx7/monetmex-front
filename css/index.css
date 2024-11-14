@@ -246,7 +246,7 @@ header.scrolled {
 }
 
 .carousel-inner img {
-    max-height: 500px;
+    max-height: 700px;
     object-fit: cover;
 }
 
