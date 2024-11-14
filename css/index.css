@@ -105,15 +105,16 @@ header.scrolled {
 
 /* Asignar imágenes a cada círculo */
 .box-1 .circle {
-    background-image: url('https://www.vital-balance.com/wp-content/uploads/2020/04/pilates.jpg');
+    background-image: url('../src/_DSC9691.jpg');
+    /* background-image: 'src'; */
 }
 
 .box-2 .circle {
-    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg');
+    background-image: url('../src/_DSC9918.jpg');
 }
 
 .box-3 .circle {
-    background-image: url('https://res.cloudinary.com/freshis/image/upload/v1680104224/yoga2_cd62409471.jpg');
+    background-image: url('../src/_DSC9792.jpg');
 }
 
 /* Texto debajo de cada círculo */

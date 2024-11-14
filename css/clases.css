@@ -1,177 +1,168 @@
 body {
-    background-color: #E6E1DB;
+  background-color: #e6e1db;
 }
 
 /* Estilo de la sección de Pilates Reformer */
 .pilates-section {
-    width: 100%;
-    padding: 0;
-    margin: 0 0 70px 0;
-    /* Espacio mayor entre secciones */
-
+  width: 100%;
+  padding: 0;
+  margin: 0 0 70px 0;
+  /* Espacio mayor entre secciones */
 }
 
 /* Imagen de fondo y título */
 .image-container {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Fondo específico para cada sección */
 .pilates-reformer {
-    background-image: url('https://www.rsvponline.mx/800x600/filters:format(jpg):quality(75)/files/rsvp/images/main/2024/pilates_reformer.jpg');
+  background-image: url("../src/_DSC9678.jpg");
 }
 
 .Barre-class {
-    background-image: url('https://casabarre.com/wp-content/uploads/sites/17/2022/10/DSC02871-2.jpg');
-    /* Cambia esta URL por la imagen de yoga */
+  background-image: url("../src/_DSC9782.jpg");
+  /* Cambia esta URL por la imagen de yoga */
 }
 
 .yoga-class {
-    background-image: url('https://www.hola.com/horizon/landscape/1402a5bcf3b6-hatha-yoga-1t-t.jpg');
-    /* Cambia esta URL por la imagen de meditación */
+  background-image: url("https://www.hola.com/horizon/landscape/1402a5bcf3b6-hatha-yoga-1t-t.jpg");
+  /* Cambia esta URL por la imagen de meditación */
 }
 
 .title {
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    font-family: Georgia, serif;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-family: Georgia, serif;
 }
 
 /* Contenedor de la descripción debajo de la imagen */
 .description-container {
-    padding: 20px;
-    color: #333;
-    text-align: left;
-    max-width: 800px;
-    margin: auto;
+  padding: 20px;
+  color: #333;
+  text-align: left;
+  max-width: 800px;
+  margin: auto;
 }
 
 .description-container h2 {
-    font-size: 1.8rem;
-    font-family: sans-serif;
-    margin-bottom: 10px;
-    color: #333;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .description-container p {
-    margin: 8px 0;
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.5;
+  margin: 8px 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
 }
 
 /* Centrando solo "Lugares Disponibles" y el botón */
 .availability,
 .reserve-button {
-    text-align: center;
-    display: block;
-    margin: 10px auto 20px auto !important;
+  text-align: center;
+  display: block;
+  margin: 10px auto 20px auto !important;
 }
 
 /* Botón de reservar */
 .reserve-button {
-    width: 50%;
-    padding: 10px;
-    background-color: #b28a74;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 30px;
+  width: 50%;
+  padding: 10px;
+  background-color: #b28a74;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 30px;
 }
 
 .reserve-button:hover {
-    background-color: #9e7662;
+  background-color: #9e7662;
 }
 
 /* Estilos para pantallas de tamaño mediano (portátiles) */
 @media (min-width: 1000px) {
+  .description-container h2,
+  .description-container p {
+    margin-left: -60px;
+    /* font-size: 10px; */
+  }
 
-    .description-container h2,
-    .description-container p {
-        margin-left: -60px;
-        /* font-size: 10px; */
-    }
+  .description-container h2 {
+    font-size: 2rem;
+  }
 
-    .description-container h2 {
-        font-size: 2rem;
-    }
-
-    .description-container p {
-        font-size: 1.5rem;
-        /* font-size: 10px; */
-    }
+  .description-container p {
+    font-size: 1.5rem;
+    /* font-size: 10px; */
+  }
 }
-
-
 
 /* Estilos para pantallas de tamaño grande (pantallas grandes) */
 @media (min-width: 1400px) {
-
-    .description-container h2,
-    .description-container p {
-        margin-left: -220px;
-    }
-
-
+  .description-container h2,
+  .description-container p {
+    margin-left: -220px;
+  }
 }
 
 /* Estilos para pantallas muy grandes (2560px) */
 @media (min-width: 2560px) {
+  .description-container h2,
+  .description-container p {
+    margin-left: -50rem;
+  }
 
-    .description-container h2,
-    .description-container p {
-        margin-left: -50rem;
-    }
+  .description-container h2 {
+    font-size: 4rem;
+  }
 
-    .description-container h2 {
-        font-size: 4rem;
-    }
+  .description-container p {
+    font-size: 2rem;
+    /* font-size: 10px; */
+  }
 
-    .description-container p {
-        font-size: 2rem;
-        /* font-size: 10px; */
-    }
-
-    .reserve-button {
-        width: 60%;
-        font-size: 2rem;
-    }
+  .reserve-button {
+    width: 60%;
+    font-size: 2rem;
+  }
 }
-
 
 /* Header Fijo */
 /* Clase que cambia el color al hacer scroll */
 header.scrolled {
-    background-color: #EFE5E0;
-    /* Color sólido deseado */
-    color: white;
-    /* Color de texto al hacer scroll */
+  background-color: #efe5e0;
+  /* Color sólido deseado */
+  color: white;
+  /* Color de texto al hacer scroll */
 }
 
 /* Limitar el ancho y evitar desbordamiento */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1em;
-    background: #EFE5E0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background: #efe5e0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  z-index: 1002;
 }
 
 /* Alinear los elementos del header */
@@ -182,168 +173,168 @@ header {
 
 .header-right,
 .header-left {
-    flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .header-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    margin-left: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 105px;
 }
 
 .logo {
-    width: 100px;
-    /* Ajusta el ancho según tus necesidades */
-    height: auto;
-    /* Mantiene la proporción del logo */
+  width: 100px;
+  /* Ajusta el ancho según tus necesidades */
+  height: auto;
+  /* Mantiene la proporción del logo */
 }
 
 .header-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
 }
 
 /* Ajustar el botón de menú */
 .menu-toggle {
-    font-size: 1.5em;
-    color: black;
-    background: none;
-    border: none;
-    cursor: pointer;
+  font-size: 1.5em;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* Asegurarse de que el contenido principal no esté oculto detrás del header */
 main {
-    padding-top: 150px;
-    /* Ajusta según la altura del header */
-    box-sizing: border-box;
+  padding-top: 150px;
+  /* Ajusta según la altura del header */
+  box-sizing: border-box;
 }
 
 /* Botón de menú en el lado derecho */
 
 .menu-icon {
-    display: inline;
-    /* Muestra el icono de menú al inicio */
+  display: inline;
+  /* Muestra el icono de menú al inicio */
 }
 
 .close-icon {
-    display: none;
-    /* Oculta el icono de cierre al inicio */
+  display: none;
+  /* Oculta el icono de cierre al inicio */
 }
 
 /* Estilos para el menú lateral */
 #sidebar-menu {
-    position: fixed;
-    top: 0;
-    right: -350px;
-    /* Oculto al inicio */
-    width: 300px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white !important;
-    transition: right 0.3s ease;
-    z-index: 1003;
-    padding-top: 70px;
-    padding-left: 20px;
+  position: fixed;
+  top: 0;
+  right: -350px;
+  /* Oculto al inicio */
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white !important;
+  transition: right 0.3s ease;
+  z-index: 1003;
+  padding-top: 70px;
+  padding-left: 20px;
 }
 
 #sidebar-menu.active {
-    right: 0;
-    /* Muestra el menú al activar */
+  right: 0;
+  /* Muestra el menú al activar */
 }
 
 #sidebar-menu a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff !important;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff !important;
+  display: block;
+  transition: 0.3s;
 }
 
 #sidebar-menu a:visited {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 #sidebar-menu a:hover {
-    color: #ac9595 !important;
-    transition: color 0.3s ease !important;
+  color: #ac9595 !important;
+  transition: color 0.3s ease !important;
 }
 
 /* Icono de cierre dentro del menú */
 #sidebar-menu .close-icon {
-    margin-bottom: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white !important;
+  margin-bottom: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white !important;
 }
 
 /* Overlay */
 #menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    /* Oculto al inicio */
-    z-index: 1002;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Oculto al inicio */
+  z-index: 1002;
 }
 
 #menu-overlay.active {
-    display: block;
-    /* Muestra el overlay cuando está activo */
+  display: block;
+  /* Muestra el overlay cuando está activo */
 }
 
 /* Mostrar el icono de cierre y ocultar el icono de menú cuando el menú esté activo */
-#sidebar-menu.active~.header-right .menu-toggle .menu-icon {
-    display: none;
+#sidebar-menu.active ~ .header-right .menu-toggle .menu-icon {
+  display: none;
 }
 
-#sidebar-menu.active~.header-right .menu-toggle .close-icon {
-    display: inline;
+#sidebar-menu.active ~ .header-right .menu-toggle .close-icon {
+  display: inline;
 }
 
 #sidebar-menu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    margin-top: 12px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  margin-top: 12px;
 }
 
 .closebtn:visited {
-    color: white !important;
+  color: white !important;
 }
 
 .closebtn {
-    color: inherit !important;
-    /* Asegura que el color del enlace no cambie */
-    text-decoration: none !important;
-    /* Elimina cualquier subrayado o estilo predeterminado */
+  color: inherit !important;
+  /* Asegura que el color del enlace no cambie */
+  text-decoration: none !important;
+  /* Elimina cualquier subrayado o estilo predeterminado */
 }
 
 #sidebar-menu .closebtn .close-icon {
-    color: white !important;
+  color: white !important;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff !important;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff !important;
+  display: block;
+  transition: 0.3s;
 }
 
 /*
@@ -352,8 +343,8 @@ main {
 =======================
 */
 #insta {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 /*
@@ -363,75 +354,75 @@ start footer style
 */
 
 .footer {
-    background-color: #d9cdc4;
-    padding: 20px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #d9cdc4;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #3f3f3f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3f3f3f;
 }
 
 .footer-logo img {
-    width: 50px;
-    margin-bottom: 5px;
+  width: 50px;
+  margin-bottom: 5px;
 }
 
 .footer-logo h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
 
 .footer-logo p {
-    font-size: 14px;
-    color: #3f3f3f;
+  font-size: 14px;
+  color: #3f3f3f;
 }
 
 .footer-address {
-    font-size: 14px;
-    color: #3f3f3f;
-    text-align: left;
+  font-size: 14px;
+  color: #3f3f3f;
+  text-align: left;
 }
 
 .footer-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-menu a {
-    font-size: 14px;
-    color: #3f3f3f;
-    text-decoration: none;
+  font-size: 14px;
+  color: #3f3f3f;
+  text-decoration: none;
 }
 
 .footer-menu a:hover {
-    color: #7d6b6b;
+  color: #7d6b6b;
 }
 
 .footer-social a {
-    display: inline-block;
-    font-size: 24px;
-    color: #3f3f3f;
+  display: inline-block;
+  font-size: 24px;
+  color: #3f3f3f;
 }
 
 .footer-social img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 /*
@@ -446,124 +437,114 @@ movil style
 =======================
 */
 
-
 /* General Mobile Adjustments */
 @media (max-width: 768px) {
-    body {
-        margin: 0;
-        padding: 0;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 
-    .logo {
-        width: 94px;
-        /* Reduce logo size on mobile */
-    }
+  .logo {
+    width: 94px;
+    /* Reduce logo size on mobile */
+  }
 
-    /* Sidebar Adjustments */
-    #sidebar-menu {
-        width: 250px;
-        /* Reduce sidebar width */
-    }
+  /* Sidebar Adjustments */
+  #sidebar-menu {
+    width: 250px;
+    /* Reduce sidebar width */
+  }
 
-    /* Footer Adjustments */
-    .footer-content {
-        flex-direction: column;
-    }
+  /* Footer Adjustments */
+  .footer-content {
+    flex-direction: column;
+  }
 
-    .footer-logo,
-    .footer-address,
-    .footer-menu,
-    .footer-social {
-        text-align: center;
-        margin-bottom: 15px;
-    }
+  .footer-logo,
+  .footer-address,
+  .footer-menu,
+  .footer-social {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-    .footer-menu {
-        gap: 5px;
-    }
+  .footer-menu {
+    gap: 5px;
+  }
 
+  .insta {
+    font-size: 24px !important;
+  }
 
-    .insta {
-        font-size: 24px !important;
-    }
-
-    .btnmenu {
-        font-size: 2.5rem !important;
-    }
+  .btnmenu {
+    font-size: 2.5rem !important;
+  }
 }
-
 
 /* Media Queries */
 @media (max-width: 768px) {
-    #sidebar-menu {
-        width: 200px;
-    }
+  #sidebar-menu {
+    width: 200px;
+  }
 }
 
 @media (min-width: 2500px) {
+  .custom-svg {
+    width: 40px;
+    height: 38px;
+  }
 
+  main {
+    padding-top: 250px !important;
+  }
 
-    .custom-svg {
-        width: 40px;
-        height: 38px;
-    }
+  h3 {
+    font-size: 2.5rem;
+  }
 
-    main {
-        padding-top: 250px !important;
-    }
+  p {
+    font-size: 2rem;
+  }
 
-    h3 {
-        font-size: 2.5rem;
-    }
+  /* Ajustes generales */
+  body {
+    font-size: 18px;
+    /* Ajusta el tamaño de fuente según sea necesario */
+  }
 
-    p {
-        font-size: 2rem;
-    }
+  .logo {
+    width: 200px;
+    /* Ajusta el tamaño del logo */
+  }
 
+  .carousel-inner img {
+    max-height: 700px;
+    /* Ajusta la altura máxima de las imágenes del carrusel */
+  }
 
-    /* Ajustes generales */
-    body {
-        font-size: 18px;
-        /* Ajusta el tamaño de fuente según sea necesario */
-    }
+  .footer-logo img {
+    width: 100px;
+    /* Ajusta el tamaño del logo en el pie de página */
+  }
 
-    .logo {
-        width: 200px;
-        /* Ajusta el tamaño del logo */
-    }
+  .footer-logo h2 {
+    font-size: 30px;
+    /* Ajusta el tamaño del texto en el pie de página */
+  }
 
+  .footer-logo p {
+    font-size: 18px;
+    /* Ajusta el tamaño del párrafo en el pie de página */
+  }
 
+  .footer-address,
+  .footer-menu a {
+    font-size: 18px;
+    /* Ajusta el tamaño del texto en el pie de página */
+  }
 
-
-
-    .carousel-inner img {
-        max-height: 700px;
-        /* Ajusta la altura máxima de las imágenes del carrusel */
-    }
-
-    .footer-logo img {
-        width: 100px;
-        /* Ajusta el tamaño del logo en el pie de página */
-    }
-
-    .footer-logo h2 {
-        font-size: 30px;
-        /* Ajusta el tamaño del texto en el pie de página */
-    }
-
-    .footer-logo p {
-        font-size: 18px;
-        /* Ajusta el tamaño del párrafo en el pie de página */
-    }
-
-    .footer-address,
-    .footer-menu a {
-        font-size: 18px;
-        /* Ajusta el tamaño del texto en el pie de página */
-    }
-
-    .footer-social a {
-        font-size: 30px;
-        /* Ajusta el tamaño de los iconos sociales en el pie de página */
-    }
+  .footer-social a {
+    font-size: 30px;
+    /* Ajusta el tamaño de los iconos sociales en el pie de página */
+  }
 }
