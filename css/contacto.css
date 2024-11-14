@@ -1,42 +1,283 @@
-.contacto-section {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* .contacto-section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    background-color:#E6E1DB ;
+body,
+html {
+  height: 100%;
+  background-color: #e6e1db;
 }
 
 .container {
-    text-align: center;
-    padding: 20px;
-    max-width: 400px;
-   
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
 }
 
 h2 {
-    margin: 20px 0 10px; /* Espaciado arriba y abajo */
-    font-size: 1.8em;
-    font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-
+  margin: 20px 0 10px; /* Espaciado arriba y abajo *
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
-    margin: 5px 0;
-    line-height: 1.6; /* Para mejorar la legibilidad */
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
+  margin: 5px 0;
+  line-height: 1.6; /* Para mejorar la legibilidad *
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
 }
 
 p + h2 {
-    margin-top: 20px; /* Espacio adicional entre cada sección */
+  margin-top: 20px; /* Espacio adicional entre cada sección *
 }
 
 .footer-address p {
-    font-size: 14px !important;
-    color: #3f3f3f;
-    /* text-align: left; */
+  font-size: 14px !important;
+  color: #3f3f3f;
+  /* text-align: left; *
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #e6e1db;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contacto-section {
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-image {
+  flex: 1;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.right-content {
+  flex: 2;
+  max-width: 600px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+p + h2 {
+  margin-top: 20px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.footer-address p {
+  font-size: 14px;
+  color: #3f3f3f;
+} */
+
+/* Global reset y configuración básica *
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #e6e1db;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contacto-section {
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+}
+
+/* Tipografía *
+h2 {
+  margin: 20px 0 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+p + h2 {
+  margin-top: 20px;
+}
+
+/* Contenedor flexible *
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-image {
+  flex: 1;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.right-content {
+  flex: 2;
+  max-width: 600px;
+}
+
+/* Footer *
+.footer-address p {
+  font-size: 14px;
+  color: #3f3f3f;
+}*/
+
+/* Global reset y configuración básica */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  background-color: #e6e1db;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+.contacto-section {
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+}
+
+/* Tipografía */
+h2 {
+  margin: 20px 0 10px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+p {
+  margin: 5px 0;
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+p + h2 {
+  margin-top: 20px;
+}
+
+/* Contenedor flexible */
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-image {
+  flex: 1;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.right-content {
+  flex: 2;
+  max-width: 600px;
+}
+
+/* Footer */
+.footer-address p {
+  font-size: 14px;
+  color: #3f3f3f;
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* Cambia a columna en móviles */
+    max-width: 100%; /* Asegura que no sobrepase el ancho del viewport */
+    padding: 0 10px; /* Agrega algo de margen lateral */
+  }
+
+  .container,
+  .contacto-section {
+    padding: 10px; /* Reduce padding en móviles */
+  }
+
+  .left-image,
+  .right-content {
+    max-width: 100%; /* Asegura que ambos elementos se ajusten al ancho */
+  }
+
+  .left-image img {
+    margin: 0 auto; /* Centra la imagen */
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.5em; /* Ajuste de tamaño de fuente en h2 para móviles */
+  }
+
+  p {
+    font-size: 1.2rem; /* Ajuste de tamaño de fuente en p para móviles */
+  }
 }
