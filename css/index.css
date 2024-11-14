@@ -23,7 +23,7 @@ main {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
     background-color: #E6E0DB;
 }
@@ -246,7 +246,7 @@ header.scrolled {
 }
 
 .carousel-inner img {
-    max-height: 700px;
+    max-height: 600px;
     object-fit: cover;
 }
 
