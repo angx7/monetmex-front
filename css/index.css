@@ -348,6 +348,13 @@ header.scrolled {
   }
 }
 
+@media (min-width: 1200px) {
+  .carousel-inner img {
+    max-height: 700px;
+    object-fit: cover;
+  }
+}
+
 /*
 =======================
 emd cards style
@@ -751,7 +758,7 @@ movil style
 @media (min-width: 2500px) {
   .titulos {
     font-size: 2rem !important;
-    margin-left: 22px;
+    margin-left: 100px;
   }
   .custom-svg {
     width: 40px;
@@ -784,19 +791,39 @@ movil style
     /* Ajusta el tamaño del logo */
   }
 
+  .circle {
+    width: 300px;
+    height: 300px;
+    /* Ajusta el tamaño de los círculos */
+  }
+
   .encabezado h1 {
     font-size: 3.5em;
     /* Ajusta el tamaño del título */
   }
 
   .welcome-text h1 {
-    font-size: 60px;
+    font-size: 80px;
     /* Ajusta el tamaño del texto de bienvenida */
   }
 
   .welcome-text p {
-    font-size: 22px;
+    font-size: 40px;
     /* Ajusta el tamaño del párrafo de bienvenida */
+  }
+
+  .heading h2 {
+    font-size: 2.5em;
+    /* Ajusta el tamaño del texto de bienvenida */
+  }
+
+  .heading h3 {
+    font-size: 2em;
+    /* Ajusta el tamaño del texto de bienvenida */
+  }
+
+  .welcome-text {
+    max-width: 1200px;
   }
 
   .image-container {
@@ -817,7 +844,7 @@ movil style
   }
 
   .carousel-inner img {
-    max-height: 700px;
+    max-height: 1150px;
     /* Ajusta la altura máxima de las imágenes del carrusel */
   }
 
