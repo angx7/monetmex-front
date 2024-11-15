@@ -38,9 +38,9 @@ async function login() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Mostar u ocultar contraseña
   // Selecciona todos los íconos de toggle-password
   const togglePasswordIcons = document.querySelectorAll(".toggle-password");
-
   togglePasswordIcons.forEach((icon) => {
     icon.addEventListener("click", function () {
       const passwordField = document.querySelector(
@@ -52,16 +52,54 @@ document.addEventListener("DOMContentLoaded", function () {
       icon.classList.toggle("fa-eye-slash");
     });
   });
+
+  // Validar formulario de login
+  const logEmailInput = document.getElementById("txtLogEmail");
+  const logPasswordInput = document.getElementById("loginPassword");
+
+  logEmailInput.addEventListener("input", enableLoginButton);
+  logEmailInput.addEventListener("blur", enableLoginButton);
+  logPasswordInput.addEventListener("input", enableLoginButton);
+  logPasswordInput.addEventListener("blur", enableLoginButton);
+
+  // Llamar a enableLoginButton al cargar la página para establecer el estado inicial del botón
+  enableLoginButton();
 });
 
-function validateEmail(emailId) {
-  let email = document.getElementById(emailId).value;
-  const errorMessage = document.getElementById("error-message-" + emailId);
+function enableLoginButton() {
+  const logEmail = document.getElementById("txtLogEmail").value;
+  const logPassword = document.getElementById("loginPassword").value;
+  const loginButton = document.getElementById("loginBtn");
+  const emailErrorMessage = document.getElementById(
+    "error-message-txtLogEmail"
+  );
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para validar el correo
-  if (!emailRegex.test(email)) {
-    errorMessage.style.display = "block"; // Muestra el mensaje de error si no es válido
+  if (validateEmail(logEmail) && logPassword) {
+    loginButton.disabled = false; // Habilitar el botón
+    emailErrorMessage.style.display = "none"; // Ocultar mensaje de error
   } else {
-    errorMessage.style.display = "none"; // Oculta el mensaje de error si es válido
+    loginButton.disabled = true; // Deshabilitar el botón
+    if (!validateEmail(logEmail)) {
+      emailErrorMessage.style.display = "block"; // Mostrar mensaje de error
+    } else {
+      emailErrorMessage.style.display = "none"; // Ocultar mensaje de error
+    }
   }
 }
+
+function validateEmail(email) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+// function validateEmail(emailId) {
+//   let email = document.getElementById(emailId).value;
+//   const errorMessage = document.getElementById("error-message-" + emailId);
+
+//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para validar el correo
+//   if (!emailRegex.test(email)) {
+//     errorMessage.style.display = "block"; // Muestra el mensaje de error si no es válido
+//   } else {
+//     errorMessage.style.display = "none"; // Oculta el mensaje de error si es válido
+//   }
+// }
