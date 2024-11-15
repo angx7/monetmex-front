@@ -114,17 +114,31 @@ function enableSubmitButton() {
   const regEmailErrorMessage = document.getElementById(
     "error-message-txtRegEmail"
   );
+  const regPhoneErrorMessage = document.getElementById(
+    "error-message-txtPhone"
+  );
 
-  // Habilitar el botón de registro solo si todos los campos están completos y el email es válido
-  if (validateEmail(regEmail) && regName && regPhone && regPassword) {
+  // Habilitar el botón de registro solo si todos los campos están completos y el email y teléfono son válidos
+  if (
+    validateEmail(regEmail) &&
+    regName &&
+    validatePhone(regPhone) &&
+    regPassword
+  ) {
     registerButton.disabled = false; // Habilitar el botón
-    regEmailErrorMessage.style.display = "none"; // Ocultar mensaje de error
+    regEmailErrorMessage.style.display = "none"; // Ocultar mensaje de error de email
+    regPhoneErrorMessage.style.display = "none"; // Ocultar mensaje de error de teléfono
   } else {
     registerButton.disabled = true; // Deshabilitar el botón
     if (!validateEmail(regEmail)) {
-      regEmailErrorMessage.style.display = "block"; // Mostrar mensaje de error
+      regEmailErrorMessage.style.display = "block"; // Mostrar mensaje de error de email
     } else {
-      regEmailErrorMessage.style.display = "none"; // Ocultar mensaje de error
+      regEmailErrorMessage.style.display = "none"; // Ocultar mensaje de error de email
+    }
+    if (!validatePhone(regPhone)) {
+      regPhoneErrorMessage.style.display = "block"; // Mostrar mensaje de error de teléfono
+    } else {
+      regPhoneErrorMessage.style.display = "none"; // Ocultar mensaje de error de teléfono
     }
   }
 

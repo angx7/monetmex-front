@@ -176,7 +176,8 @@ input[type="password"] {
 }
 /* Estilo del contenedor del mensaje de error */
 #error-message-txtRegEmail,
-#error-message-txtLogEmail {
+#error-message-txtLogEmail,
+#error-message-txtPhone {
   color: #fff; /* Texto blanco */
   background-color: #ff4d4d; /* Fondo rojo claro */
   padding: 10px; /* Espaciado interno */
@@ -196,6 +197,7 @@ input[type="password"] {
 
 /* Se puede añadir un borde más oscuro para mejorar el contraste */
 #error-message-txtRegEmail,
-#error-message-txtLogEmail {
+#error-message-txtLogEmail,
+#error-message-txtPhone {
   border: 1px solid #e60000; /* Borde rojo */
 }
