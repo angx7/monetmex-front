@@ -1,108 +1,201 @@
 :root {
-    --main-bg-color: #f9f9f9;
-    --text-color: #5c4533;
-    --highlight-color: #a2836e;
-    --button-bg: #cab9ac;
-    --button-hover-bg: #b58e76;
+  --main-bg-color: #f9f9f9;
+  --text-color: #5c4533;
+  --highlight-color: #a2836e;
+  --button-bg: #cab9ac;
+  --button-hover-bg: #b58e76;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-     /* height: 100%;
+  margin: 0;
+  padding: 0;
+  /* height: 100%;
     overflow: hidden;  */
-    font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  font-family: "Jost", sans-serif;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
 .main {
-    width: 350px;
-    height: 500px;
-    background: color(var(--main-bg-color) lightness(+10%));
-    overflow: hidden;
-    /* background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover; */
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
+  width: 350px;
+  height: 500px;
+  background: color(var(--main-bg-color) lightness(+10%));
+  overflow: hidden;
+  /* background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover; */
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
 }
 
 #chk {
-    display: none;
+  display: none;
 }
 
 .signup {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 label {
-    color: var(--text-color);
-    font-size: 1.5em;
-    justify-content: center;
-    display: flex;
-    margin: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .5s ease-in-out;
+  color: var(--text-color);
+  font-size: 1.5em;
+  justify-content: center;
+  display: flex;
+  margin: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 input {
-    width: 60%;
-    height: 10px;
-    background: #e0dede;
-    justify-content: center;
-    display: flex;
-    margin: 20px auto;
-    padding: 12px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
+  width: 60%;
+  height: 10px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }
 
 .btnRegisterPage {
-    width: 60%;
-    height: 40px;
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: var(--button-bg);
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: .2s ease-in;
-    cursor: pointer;
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: var(--button-bg);
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
 }
 
 .btnRegisterPage:hover {
-    background: var(--button-hover-bg);
+  background: var(--button-hover-bg);
 }
 
 .login {
-    height: 460px;
-    background: #eee;
-    border-radius: 60% / 10%;
-    transform: translateY(-180px);
-    transition: .8s ease-in-out;
+  height: 460px;
+  background: #eee;
+  border-radius: 60% / 10%;
+  transform: translateY(-180px);
+  transition: 0.8s ease-in-out;
 }
 
 .login label {
-    color: var(--text-color);
-    transform: scale(.6);
+  color: var(--text-color);
+  transform: scale(0.6);
 }
 
-#chk:checked~.login {
-    transform: translateY(-500px);
+#chk:checked ~ .login {
+  transform: translateY(-500px);
 }
 
-#chk:checked~.login label {
-    transform: scale(1);
+#chk:checked ~ .login label {
+  transform: scale(1);
 }
 
-#chk:checked~.signup label {
-    transform: scale(.6);
+#chk:checked ~ .signup label {
+  transform: scale(0.6);
+} /*
+.password-container {
+  position: relative;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible *
+  margin: 20px auto; /* Centra el contenedor *
+  max-width: 350px; /* Limita el tamaño máximo para que no se expanda demasiado *
 }
 
+.password-container input {
+  width: 100%; /* Asegura que el input ocupe el 100% del contenedor *
+  padding-right: 40px; /* Espacio suficiente para el ícono *
+  background: #e0dede;
+  border-radius: 5px;
+  border: none;
+  height: 40px; /* Establece una altura fija para los inputs *
+  box-sizing: border-box; /* Incluye padding y bordes en el cálculo del ancho *
+}
+
+.password-container i {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Ajusta la posición del ícono a la derecha *
+  transform: translateY(-50%); /* Centra verticalmente el ícono *
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  box-sizing: border-box; /* Asegura que el padding no cambie el tamaño *
+  width: 90%; /* Hace que los inputs se ajusten al ancho del contenedor *
+  height: 40px; /* Establece una altura uniforme para todos los inputs *
+}*/
+
+.password-container {
+  position: relative;
+  width: 60%; /* Mantiene el mismo ancho que otros inputs */
+  margin: 20px auto; /* Centra el contenedor */
+}
+
+.password-container input {
+  width: 100%; /* Asegura que el input se ajuste al contenedor */
+  padding-right: 30px; /* Añade espacio para el ícono */
+  background: #e0dede;
+  border-radius: 5px;
+  border: none;
+  height: auto; /* Elimina tamaños específicos para inputs */
+  box-sizing: border-box; /* Incluye paddings en el ancho total */
+}
+
+.password-container i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 1.2em; /* Ajusta el tamaño del ícono */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  height: auto; /* Asegura que todos los inputs tengan el mismo alto */
+  padding: 12px; /* Coincide con otros inputs */
+  box-sizing: border-box; /* Ajusta los paddings dentro del ancho */
+}
+/* Estilo del contenedor del mensaje de error */
+#error-message-txtRegEmail,
+#error-message-txtLogEmail {
+  color: #fff; /* Texto blanco */
+  background-color: #ff4d4d; /* Fondo rojo claro */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-top: 10px; /* Espacio superior */
+  font-size: 0.9em; /* Tamaño de texto adecuado */
+  display: block; /* Se asegura de que ocupe el ancho disponible */
+  width: 60%; /* Ancho del mensaje, alineado con el input */
+  max-width: 350px; /* Ancho máximo para que no se estire demasiado */
+  min-width: 150px; /* Ancho mínimo para que no se deforme */
+  text-align: center; /* Centra el texto dentro del div */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+  transition: opacity 0.3s ease; /* Transición suave */
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
+}
+
+/* Se puede añadir un borde más oscuro para mejorar el contraste */
+#error-message-txtRegEmail,
+#error-message-txtLogEmail {
+  border: 1px solid #e60000; /* Borde rojo */
+}

@@ -57,7 +57,18 @@
           <form>
             <label for="chk" aria-hidden="true">Registrarse</label>
             <input type="text" name="txt" placeholder="Nombre" required="" />
-            <input type="email" name="email" placeholder="Email" required="" />
+            <!-- <input type="email" name="email" placeholder="Email" required="" /> -->
+            <input
+              type="email"
+              name="email"
+              id="txtRegEmail"
+              placeholder="Email"
+              required=""
+              onblur="validateEmail('txtRegEmail')"
+            />
+            <div id="error-message-txtRegEmail">
+              Por favor, ingresa un correo electrónico válido.
+            </div>
             <input
               type="text"
               id="telefono"
@@ -73,25 +84,22 @@
                 name="pswd"
                 placeholder="Contraseña"
                 required=""
-                id="password"
+                id="registerPassword"
               />
+              <i
+                class="fas fa-eye toggle-password"
+                data-target="#registerPassword"
+              ></i>
             </div>
-            <script>
-              const togglePassword = document.querySelector("#togglePassword");
-              const password = document.querySelector("#password");
-
-              togglePassword.addEventListener("click", function (e) {
-                // toggle the type attribute
-                const type =
-                  password.getAttribute("type") === "password"
-                    ? "text"
-                    : "password";
-                password.setAttribute("type", type);
-                // toggle the eye slash icon
-                this.classList.toggle("fa-eye-slash");
-              });
-            </script>
-            <button type="submit" class="btnRegisterPage">Crear cuenta</button>
+            <!-- <button type="submit" class="btnRegisterPage">Crear cuenta</button> -->
+            <button
+              type="submit"
+              class="btnRegisterPage"
+              id="registerBtn"
+              disabled
+            >
+              Crear cuenta
+            </button>
           </form>
         </div>
 
@@ -101,18 +109,37 @@
             <input
               type="email"
               name="email"
+              id="txtLogEmail"
               placeholder="Email"
               required=""
-              id="txtLogEmail"
+              onblur="validateEmail('txtLogEmail')"
             />
-            <input
-              type="password"
-              name="pswd"
-              placeholder="Contraseña"
-              required=""
-              id="txtlogPass"
-            />
-            <button type="button" class="btnRegisterPage" onclick="login()">
+            <div id="error-message-txtLogEmail">
+              Por favor, ingresa un correo electrónico válido.
+            </div>
+            <div class="password-container">
+              <input
+                type="password"
+                name="pswd"
+                placeholder="Contraseña"
+                required=""
+                id="loginPassword"
+              />
+              <i
+                class="fas fa-eye toggle-password"
+                data-target="#loginPassword"
+              ></i>
+            </div>
+            <!-- <button type="button" class="btnRegisterPage" onclick="login()">
+              Iniciar Sesión
+            </button> -->
+            <button
+              type="button"
+              class="btnRegisterPage"
+              id="loginBtn"
+              onclick="login()"
+              disabled
+            >
               Iniciar Sesión
             </button>
           </form>
@@ -160,25 +187,7 @@
         </div>
       </div>
     </footer>
-    <script>
-      // Simulación de verificación de inicio de sesión
-      const isLoggedIn = false; // Cambia esto según el estado real de inicio de sesión
-      const userName = "Angel Becerra"; // Nombre del usuario si está logueado
 
-      const loginLink = document.getElementById("login-link");
-
-      if (isLoggedIn) {
-        loginLink.textContent = userName;
-        loginLink.href = "javascript:void(0);"; // Evita la redirección
-        loginLink.addEventListener("click", function () {
-          if (confirm("¿Quieres cerrar sesión?")) {
-            // Aquí puedes agregar la lógica para cerrar sesión
-            alert("Sesión cerrada");
-            isLoggedIn = false;
-          }
-        });
-      }
-    </script>
     <script src="js/index.js"></script>
     <script src="js/registerModule.js"></script>
   </body>

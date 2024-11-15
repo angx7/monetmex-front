@@ -58,26 +58,26 @@ function valideKey(evt) {
 // localStorage.clear();
 
 function checkUser() {
-  const user = localStorage.getItem("user");
+  const user = sessionStorage.getItem("user");
   const isLogged = false;
   const loginLink = document.getElementById("login-link");
 
   if (!user) {
     isLogged = false;
     console.log("Usuario logueado: " + user);
-    const userName = localStorage.getItem("user");
+    const userName = sessionStorage.getItem("user");
     loginLink.textContent = userName;
     loginLink.href = "javascript:void(0)";
   }
   // isLogged = true;
   console.log("Usuario no logueado");
-  const userName = localStorage.getItem("user");
+  const userName = sessionStorage.getItem("user");
   loginLink.textContent = userName;
   loginLink.href = "javascript:void(0)";
   // loginLink.style.display = "none";
   loginLink.addEventListener("click", function () {
     if (confirm("¿Desea cerrar sesión?")) {
-      localStorage.clear();
+      sessionStorage.clear();
       // window.location.href = "registerPage.html";
       window.location.reload();
     }

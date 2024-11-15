@@ -51,7 +51,7 @@ body {
 .description-container {
   padding: 20px;
   color: #333;
-  text-align: left;
+  text-align: justify;
   max-width: 800px;
   margin: auto;
 }
