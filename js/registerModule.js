@@ -1,9 +1,7 @@
 // console.log("registerModule.js");
 
 // Función para registrar un nuevo cliente
-async function register() {
-  console.log("register");
-}
+async function register() {}
 
 async function login() {
   let email = document.getElementById("txtLogEmail").value;
@@ -83,27 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // enableLoginButton();
 });
 
-// function enableLoginButton() {
-//   const logEmail = document.getElementById("txtLogEmail").value;
-//   const logPassword = document.getElementById("loginPassword").value;
-//   const loginButton = document.getElementById("loginBtn");
-//   const emailErrorMessage = document.getElementById(
-//     "error-message-txtLogEmail"
-//   );
-
-//   if (validateEmail(logEmail) && logPassword) {
-//     loginButton.disabled = false; // Habilitar el botón
-//     emailErrorMessage.style.display = "none"; // Ocultar mensaje de error
-//   } else {
-//     loginButton.disabled = true; // Deshabilitar el botón
-//     if (!validateEmail(logEmail)) {
-//       emailErrorMessage.style.display = "block"; // Mostrar mensaje de error
-//     } else {
-//       emailErrorMessage.style.display = "none"; // Ocultar mensaje de error
-//     }
-//   }
-// }
-
 function enableSubmitButton() {
   // Campos del formulario de registro
   const regEmail = document.getElementById("txtRegEmail").value;
@@ -172,15 +149,3 @@ function validateEmail(email) {
 function validatePhone(phone) {
   return phone.length === 10 && /^\d+$/.test(phone);
 }
-
-// function validateEmail(emailId) {
-//   let email = document.getElementById(emailId).value;
-//   const errorMessage = document.getElementById("error-message-" + emailId);
-
-//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex para validar el correo
-//   if (!emailRegex.test(email)) {
-//     errorMessage.style.display = "block"; // Muestra el mensaje de error si no es válido
-//   } else {
-//     errorMessage.style.display = "none"; // Oculta el mensaje de error si es válido
-//   }
-// }
