@@ -1,7 +1,44 @@
 // console.log("registerModule.js");
 
 // Función para registrar un nuevo cliente
-async function register() {}
+async function register() {
+  let nombreCliente = document.getElementById("nombreCliente").value;
+  let emailCliente = document.getElementById("txtRegEmail").value;
+  let telefono = document.getElementById("telefono").value;
+  let passwordCliente = document.getElementById("registerPassword").value;
+  const data = {
+    nombreCliente,
+    emailCliente,
+    telefonoCliente: telefono,
+    passwordCliente,
+  };
+  try {
+    const response = await fetch("http://localhost:3000/clientes", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // Muestra un mensaje de error amigable para el usuario
+      alert(`Error: ${errorData.message}`);
+      return;
+    }
+
+    const result = await response.json();
+    sessionStorage.setItem("user", result.nombreCliente);
+    console.log(sessionStorage.getItem("user"));
+    window.location.href = "index.html";
+  } catch (error) {
+    // Maneja errores inesperados de manera silenciosa
+    alert(
+      "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
+    );
+  }
+}
 
 async function login() {
   let email = document.getElementById("txtLogEmail").value;
@@ -55,16 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
       icon.classList.toggle("fa-eye-slash");
     });
   });
-
-  // Validar formulario de login
-  // const logEmailInput = document.getElementById("txtLogEmail");
-  // const logPasswordInput = document.getElementById("loginPassword");
-
-  // logEmailInput.addEventListener("input", enableLoginButton);
-  // logEmailInput.addEventListener("blur", enableLoginButton);
-  // logPasswordInput.addEventListener("input", enableLoginButton);
-  // logPasswordInput.addEventListener("blur", enableLoginButton);
-
   const inputs = document.querySelectorAll(
     "#txtRegEmail, input[name='txt'], #telefono, #registerPassword, #txtLogEmail, #loginPassword"
   );

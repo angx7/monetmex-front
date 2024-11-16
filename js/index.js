@@ -76,11 +76,27 @@ function checkUser() {
   loginLink.href = "javascript:void(0)";
   // loginLink.style.display = "none";
   loginLink.addEventListener("click", function () {
-    if (confirm("¿Desea cerrar sesión?")) {
-      sessionStorage.clear();
-      // window.location.href = "registerPage.html";
-      window.location.reload();
-    }
+    Swal.fire({
+      title: "¿Quieres Cerrar Sesión?",
+      text: "Se cerrará tu sesión actual",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "¡Sí, cerrar sesión!",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.clear();
+        Swal.fire({
+          title: "¡Sesión Cerrada!",
+          text: "Se ha cerrado tú sesión, vuelve pronto.",
+          icon: "success",
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+    });
   });
 }
 
