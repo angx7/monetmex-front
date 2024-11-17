@@ -24,7 +24,11 @@ async function register() {
     if (!response.ok) {
       const errorData = await response.json();
       // Muestra un mensaje de error amigable para el usuario
-      alert(`Error: ${errorData.message}`);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${errorData.message}`,
+      });
       return;
     }
 
@@ -34,9 +38,11 @@ async function register() {
     window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
-    alert(
-      "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
-    );
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.",
+    });
   }
 }
 
@@ -50,7 +56,7 @@ async function login() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/clientes/login", {
+    const response = await fetch("http://192.168.1.14:3000/clientes/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -61,7 +67,12 @@ async function login() {
     if (!response.ok) {
       const errorData = await response.json();
       // Muestra un mensaje de error amigable para el usuario
-      alert(`Error: ${errorData.message}`);
+      // alert(`Error: ${errorData.message}`);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${errorData.message}`,
+      });
       return;
     }
 
@@ -71,9 +82,12 @@ async function login() {
     window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
-    alert(
-      "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde."
-    );
+
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.",
+    });
   }
 }
 
