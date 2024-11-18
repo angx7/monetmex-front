@@ -78,7 +78,9 @@ async function login() {
 
     const result = await response.json();
     sessionStorage.setItem("user", result.nombreCliente);
+    sessionStorage.setItem("clienteId", result.clienteId);
     console.log(sessionStorage.getItem("user"));
+    console.log(sessionStorage.getItem("clienteId"));
     window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa

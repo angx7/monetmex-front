@@ -57,47 +57,95 @@ function valideKey(evt) {
 
 // localStorage.clear();
 
+// function checkUser() {
+//   const user = sessionStorage.getItem("user");
+//   const clienteId = sessionStorage.getItem("clienteId");
+//   const isLogged = false;
+//   const loginLink = document.getElementById("login-link");
+
+//   if (!user) {
+//     isLogged = false;
+//     const userName = sessionStorage.getItem("user");
+//     loginLink.textContent = userName;
+//     loginLink.href = "javascript:void(0)";
+//   }
+//   // isLogged = true;
+//   console.log("Usuario logueado: " + user);
+//   // console.log("Usuario no logueado");
+//   const userName = sessionStorage.getItem("user");
+//   console.log(clienteId);
+//   loginLink.textContent = userName;
+//   loginLink.href = "javascript:void(0)";
+//   // loginLink.style.display = "none";
+//   loginLink.addEventListener("click", function () {
+//     Swal.fire({
+//       title: "¿Quieres Cerrar Sesión?",
+//       text: "Se cerrará tu sesión actual",
+//       icon: "warning",
+//       showCancelButton: true,
+//       confirmButtonColor: "#3085d6",
+//       cancelButtonColor: "#d33",
+//       confirmButtonText: "¡Sí, cerrar sesión!",
+//       cancelButtonText: "Cancelar",
+//     }).then((result) => {
+//       if (result.isConfirmed) {
+//         sessionStorage.clear();
+//         Swal.fire({
+//           title: "¡Sesión Cerrada!",
+//           text: "Se ha cerrado tú sesión, vuelve pronto.",
+//           icon: "success",
+//         }).then(() => {
+//           window.location.reload();
+//         });
+//       }
+//     });
+//   });
+// }
 function checkUser() {
   const user = sessionStorage.getItem("user");
-  // const clienteId = sessionStorage.getItem("clienteId");
-  const isLogged = false;
+  const clienteId = sessionStorage.getItem("clienteId");
   const loginLink = document.getElementById("login-link");
 
-  if (!user) {
-    isLogged = false;
-    console.log("Usuario logueado: " + user);
-    const userName = sessionStorage.getItem("user");
-    loginLink.textContent = userName;
-    loginLink.href = "javascript:void(0)";
+  if (user) {
+    console.log("Usuario logueado:", user);
+    loginLink.textContent = user;
+  } else {
+    console.log("Usuario no logueado");
+    loginLink.textContent = "Iniciar sesión";
   }
-  // isLogged = true;
-  console.log("Usuario no logueado");
-  const userName = sessionStorage.getItem("user");
-  loginLink.textContent = userName;
+
   loginLink.href = "javascript:void(0)";
-  // loginLink.style.display = "none";
-  loginLink.addEventListener("click", function () {
-    Swal.fire({
-      title: "¿Quieres Cerrar Sesión?",
-      text: "Se cerrará tu sesión actual",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "¡Sí, cerrar sesión!",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        sessionStorage.clear();
-        Swal.fire({
-          title: "¡Sesión Cerrada!",
-          text: "Se ha cerrado tú sesión, vuelve pronto.",
-          icon: "success",
-        }).then(() => {
-          window.location.reload();
-        });
-      }
-    });
+
+  console.log("ID del cliente:", clienteId);
+
+  loginLink.addEventListener("click", () => {
+    if (user) {
+      // Si el usuario está logueado, permite cerrar sesión
+      Swal.fire({
+        title: "¿Quieres Cerrar Sesión?",
+        text: "Se cerrará tu sesión actual",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "¡Sí, cerrar sesión!",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          sessionStorage.clear();
+          Swal.fire({
+            title: "¡Sesión Cerrada!",
+            text: "Se ha cerrado tu sesión, vuelve pronto.",
+            icon: "success",
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      });
+    } else {
+      // Si el usuario no está logueado, redirige a la página de registro
+      window.location.href = "registerPage.html";
+    }
   });
 }
 

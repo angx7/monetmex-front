@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clases</title>
-
+    <title>Monet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,8 +20,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="css/clases.css" />
+    <!-- <link rel="stylesheet" href="css/package.css" /> -->
+    <link rel="stylesheet" href="css/profile.css" />
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -63,78 +62,81 @@
       <a href="politicas.html">Politicas de privacidad</a>
     </div>
     <div id="menu-overlay" onclick="toggleMenu()"></div>
-
     <main>
-      <!-- Sección 1: Pilates Reformer -->
-      <section class="pilates-section">
-        <div class="image-container pilates-reformer">
-          <h1 class="title">Pilates Reformer</h1>
-        </div>
-        <div class="description-container">
-          <h2>Pilates Reformer</h2>
-          <p>
-            Es una disciplina que utiliza una máquina especializada para
-            ayudarte a tonificar y fortalecer el cuerpo.
-          </p>
-          <p>
-            Al centrarse en el control del movimiento y la respiración, Pilates
-            Reformer ayuda a moldear el cuerpo y a desarrollar un núcleo fuerte,
-            promoviendo una mejor postura y bienestar general.
-          </p>
-          <p><strong>Duración:</strong> 1h</p>
-          <p class="availability"><strong>Lugares Disponibles:</strong> 7</p>
-          <button class="reserve-button">Reservar</button>
-        </div>
-      </section>
+      <section class="profile-section">
+        <div class="container">
+          <!-- Encabezado -->
+          <div class="encabezado">
+            <h1>Mi Perfil</h1>
+          </div>
 
-      <!-- Sección 2: Clases de Barre -->
-      <section class="pilates-section">
-        <div class="image-container Barre-class">
-          <h1 class="title">Barre</h1>
-        </div>
-        <div class="description-container">
-          <h2>Barre</h2>
-          <p>
-            Es una disciplina que combina movimientos de ballet, pilates y
-            entrenamiento de fuerza para tonificar y fortalecer el cuerpo a
-            través de ejercicios en barra y en el suelo.
-          </p>
-          <p>
-            Se enfoca en la alineación postural, la resistencia muscular y la
-            flexibilidad. Quema calorías y reduce en estrés.
-          </p>
-          <p><strong>Duración:</strong> 1h</p>
-          <p class="availability"><strong>Lugares Disponibles:</strong> 5</p>
-          <button class="reserve-button">Reservar</button>
-        </div>
-      </section>
+          <!-- Paquetes Comprados -->
+          <div class="card package">
+            <div class="card-inner">
+              <div class="card-front">
+                <h2 class="card-title">Paquetes Comprados</h2>
+              </div>
+              <div class="card-back">
+                <ul class="list-group">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <span>Paquete 1: 10 clases</span>
+                    <span class="badge">Válido hasta 01/12/2024</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <span>Paquete 2: 5 clases</span>
+                    <span class="badge">Válido hasta 15/01/2025</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-      <!-- Sección 3: clase de yoga -->
-      <section class="pilates-section">
-        <div class="image-container yoga-class">
-          <h1 class="title">Yoga</h1>
-        </div>
-        <div class="description-container">
-          <h2>Yoga</h2>
-          <p>
-            Es más que una práctica; es un estilo de vida que sana y revitaliza
-            el cuerpo, la mente y el espíritu.
-          </p>
-          <p>
-            A través de asanas, técnicas de respiración y meditación, el yoga
-            fomenta una conexión armoniosa con tu cuerpo y te ayuda a gestionar
-            tus pensamientos y emociones.
-          </p>
-          <p>
-            Disfruta de una mayor flexibilidad, mejor concentración y alivio de
-            las tensiones musculares mientras transformas tu bienestar general.
-          </p>
-          <p><strong>Duración:</strong> 1h</p>
-          <p class="availability"><strong>Lugares Disponibles:</strong> 5</p>
-          <button class="reserve-button">Reservar</button>
+          <!-- Próxima Clase -->
+          <div class="card package">
+            <div class="card-inner">
+              <div class="card-front">
+                <h2 class="card-title">Próxima Clase</h2>
+              </div>
+              <div class="card-back">
+                <p><strong>Fecha:</strong> 25/10/2024</p>
+                <p><strong>Hora:</strong> 10:00 AM</p>
+                <button class="btn btn-sm">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado de Paquetes -->
+          <div class="card package">
+            <div class="card-inner">
+              <div class="card-front">
+                <h2 class="card-title">Estado de Paquetes</h2>
+              </div>
+              <div class="card-back">
+                <ul class="list-group" id="package-list">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <span>Paquete 1: Restantes</span>
+                    <span class="badge">5 sesiones</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <span>Paquete 2: Restantes</span>
+                    <span class="badge">2 sesiones</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo">

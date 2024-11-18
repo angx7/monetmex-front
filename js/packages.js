@@ -16,38 +16,53 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function confirmarCompra(packageId) {
-  console.log(packageId);
-  const userId = getUserId(); // Asume que tienes una función para obtener el ID del usuario
+function confirmarCompra(paqueteId) {
+  const clienteId = sessionStorage.getItem("clienteId");
+  console.log(paqueteId);
+  console.log(clienteId);
 
-  //   fetch("/api/comprar", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       userId: userId,
-  //       packageId: packageId,
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         Swal.fire(
-  //           "Compra exitosa",
-  //           "Tu compra ha sido realizada con éxito",
-  //           "success"
-  //         );
-  //       } else {
-  //         Swal.fire("Error", "Hubo un problema con tu compra", "error");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       Swal.fire("Error", "Hubo un problema con tu compra", "error");
-  //     });
+  Swal.fire({
+    title: "Confirmar Compra",
+    text: "¿Estás seguro de que deseas comprar este paquete?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Sí, comprar!",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      comprarPaquete(clienteId, paqueteId);
+    }
+  });
 }
 
-function getUserId() {
-  // Implementa esta función para obtener el ID del usuario
-  return "usuario123"; // Ejemplo
+function comprarPaquete(clienteId, paqueteId) {
+  console.log("Comprando paquete...");
+  console.log(clienteId);
+  console.log(paqueteId);
+  // Realizar la petición al servidor
+  fetch(`http://localhost:3000/paquetes/comprar`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ clienteId, paqueteId }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al comprar el paquete");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      Swal.fire({
+        title: "¡Compra Exitosa!",
+        text: "Se ha realizado la compra del paquete.",
+        icon: "success",
+      }).then(() => {
+        window.location.reload();
+      });
+    });
 }
