@@ -35,7 +35,7 @@ async function register() {
     const result = await response.json();
     sessionStorage.setItem("user", result.nombreCliente);
     console.log(sessionStorage.getItem("user"));
-    window.location.href = "index.html";
+    // window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
     Swal.fire({
@@ -81,7 +81,16 @@ async function login() {
     sessionStorage.setItem("clienteId", result.clienteId);
     console.log(sessionStorage.getItem("user"));
     console.log(sessionStorage.getItem("clienteId"));
-    window.location.href = "index.html";
+
+    const prevPage = sessionStorage.getItem("prevPage");
+
+    if (prevPage && !prevPage.includes("registerPage.html")) {
+      window.location.href = prevPage; // Redirigir a la página anterior
+    } else {
+      window.location.href = "index.html"; // Redirigir al índice si no hay página previa
+    }
+
+    // window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
 
@@ -119,9 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Llamar a enableSubmitButton al cargar la página para establecer el estado inicial de los botones
   enableSubmitButton();
-
-  // Llamar a enableLoginButton al cargar la página para establecer el estado inicial del botón
-  // enableLoginButton();
 });
 
 function enableSubmitButton() {
