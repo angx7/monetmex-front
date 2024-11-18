@@ -59,6 +59,7 @@ function valideKey(evt) {
 
 function checkUser() {
   const user = sessionStorage.getItem("user");
+  // const clienteId = sessionStorage.getItem("clienteId");
   const isLogged = false;
   const loginLink = document.getElementById("login-link");
 
