@@ -56,7 +56,7 @@ async function login() {
   };
 
   try {
-    const response = await fetch("http://192.168.1.16:3000/clientes/login", {
+    const response = await fetch("http://localhost:3000/clientes/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
