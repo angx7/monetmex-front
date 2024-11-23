@@ -26,6 +26,7 @@
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <header>
       <div class="header-center">
         <img src="src/monetlogo.svg" alt="Monet Logo" class="logo" />
@@ -47,10 +48,7 @@
         </button>
       </div>
     </header>
-    <!-- Menú lateral -->
     <div id="sidebar-menu">
-      <!-- Ícono de cierre dentro del menú -->
-      <!-- <span class="close-icon" onclick="toggleMenu()">✖</span> -->
       <a href="javascript:void(0);" class="closebtn" onclick="toggleMenu()"
         ><span class="close-icon">x</span></a
       >
@@ -60,7 +58,7 @@
       <a href="packages.html">Paquetes</a>
       <a href="contacto.html">Contáctanos </a>
       <a href="TermyCond.html">Términos y Condiciones</a>
-      <a href="politicas.html">Politicas de privacidad</a>
+      <a href="politicas.html">Políticas de privacidad</a>
     </div>
     <div id="menu-overlay" onclick="toggleMenu()"></div>
 
@@ -76,14 +74,15 @@
             Es una disciplina que utiliza una máquina especializada para
             ayudarte a tonificar y fortalecer el cuerpo.
           </p>
-          <p>
-            Al centrarse en el control del movimiento y la respiración, Pilates
-            Reformer ayuda a moldear el cuerpo y a desarrollar un núcleo fuerte,
-            promoviendo una mejor postura y bienestar general.
-          </p>
           <p><strong>Duración:</strong> 1h</p>
           <p class="availability"><strong>Lugares Disponibles:</strong> 7</p>
-          <button class="reserve-button">Reservar</button>
+          <button
+            class="reserve-button"
+            data-category="Pilates Reformer"
+            onclick="openReservationForm(this)"
+          >
+            Reservar
+          </button>
         </div>
       </section>
 
@@ -96,20 +95,21 @@
           <h2>Barre</h2>
           <p>
             Es una disciplina que combina movimientos de ballet, pilates y
-            entrenamiento de fuerza para tonificar y fortalecer el cuerpo a
-            través de ejercicios en barra y en el suelo.
-          </p>
-          <p>
-            Se enfoca en la alineación postural, la resistencia muscular y la
-            flexibilidad. Quema calorías y reduce en estrés.
+            entrenamiento de fuerza para tonificar y fortalecer el cuerpo.
           </p>
           <p><strong>Duración:</strong> 1h</p>
           <p class="availability"><strong>Lugares Disponibles:</strong> 5</p>
-          <button class="reserve-button">Reservar</button>
+          <button
+            class="reserve-button"
+            data-category="Barre"
+            onclick="openReservationForm(this)"
+          >
+            Reservar
+          </button>
         </div>
       </section>
 
-      <!-- Sección 3: clase de yoga -->
+      <!-- Sección 3: Yoga -->
       <section class="pilates-section">
         <div class="image-container yoga-class">
           <h1 class="title">Yoga</h1>
@@ -120,21 +120,102 @@
             Es más que una práctica; es un estilo de vida que sana y revitaliza
             el cuerpo, la mente y el espíritu.
           </p>
-          <p>
-            A través de asanas, técnicas de respiración y meditación, el yoga
-            fomenta una conexión armoniosa con tu cuerpo y te ayuda a gestionar
-            tus pensamientos y emociones.
-          </p>
-          <p>
-            Disfruta de una mayor flexibilidad, mejor concentración y alivio de
-            las tensiones musculares mientras transformas tu bienestar general.
-          </p>
           <p><strong>Duración:</strong> 1h</p>
           <p class="availability"><strong>Lugares Disponibles:</strong> 5</p>
-          <button class="reserve-button">Reservar</button>
+          <button
+            class="reserve-button"
+            data-category="Yoga"
+            onclick="openReservationForm(this)"
+          >
+            Reservar
+          </button>
         </div>
       </section>
     </main>
+
+    <!-- Modal de reserva -->
+    <div
+      class="modal fade"
+      id="reservationModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reservationModalLabel">
+              Reservar Clase
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="reservationForm">
+              <div class="mb-3">
+                <label for="category" class="form-label">Clase</label>
+                <input
+                  type="text"
+                  id="category"
+                  class="form-control"
+                  readonly
+                />
+              </div>
+              <div class="mb-3">
+                <label for="dayOfWeek" class="form-label"
+                  >Día de la Semana</label
+                >
+                <select id="dayOfWeek" class="form-select" required>
+                  <option value="" disabled selected>Selecciona un día</option>
+                  <option value="Lunes">Lunes</option>
+                  <option value="Martes">Martes</option>
+                  <option value="Miércoles">Miércoles</option>
+                  <option value="Jueves">Jueves</option>
+                  <option value="Viernes">Viernes</option>
+                  <option value="Sábado">Sábado</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="schedule" class="form-label">Horario</label>
+                <select id="schedule" class="form-select" required>
+                  <option value="" disabled selected>
+                    Selecciona un horario
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="paymentMethod" class="form-label"
+                  >Método de Pago</label
+                >
+                <select id="paymentMethod" class="form-select">
+                  <option value="efectivo">Efectivo</option>
+                  <option value="transferencia">Transferencia</option>
+                </select>
+              </div>
+              <div class="alert alert-warning d-none" id="packageAlert">
+                Tienes un paquete activo con clases disponibles. Se descontará
+                una clase automáticamente.
+              </div>
+              <div class="mb-3">
+                <label for="packageSelect" class="form-label"
+                  >Selecciona tu paquete</label
+                >
+                <select id="packageSelect" class="form-select">
+                  <!-- Aquí se mostrarán los paquetes disponibles -->
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Confirmar Reserva
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo">
@@ -182,5 +263,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/index.js"></script>
+    <script src="js/reservaClases.js"></script>
   </body>
 </html>

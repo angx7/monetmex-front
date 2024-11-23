@@ -56,7 +56,7 @@ async function login() {
   };
 
   try {
-    const response = await fetch("http://192.168.1.16:3000/clientes/login", {
+    const response = await fetch("http://localhost:3000/clientes/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -77,20 +77,28 @@ async function login() {
     }
 
     const result = await response.json();
+    console.log(result);
     sessionStorage.setItem("user", result.nombreCliente);
     sessionStorage.setItem("clienteId", result.clienteId);
+    if (result.admon === 1) {
+      sessionStorage.setItem("userType", "admin");
+    } else if (result.admon === 0) {
+      sessionStorage.setItem("userType", "user");
+    }
     console.log(sessionStorage.getItem("user"));
     console.log(sessionStorage.getItem("clienteId"));
+    console.log(sessionStorage.getItem("userType"));
 
     const prevPage = sessionStorage.getItem("prevPage");
+    const userType = sessionStorage.getItem("userType");
 
-    if (prevPage && !prevPage.includes("registerPage.html")) {
+    if (userType === "admin") {
+      window.location.href = "admonProfile.html"; // Redirigir a la página de administrador
+    } else if (prevPage && !prevPage.includes("registerPage.html")) {
       window.location.href = prevPage; // Redirigir a la página anterior
     } else {
       window.location.href = "index.html"; // Redirigir al índice si no hay página previa
     }
-
-    // window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
 

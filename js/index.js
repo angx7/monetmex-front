@@ -97,7 +97,10 @@ function checkUser() {
             icon: "success",
           }).then(() => {
             // Redirige a la página de inicio
-            if (window.location.pathname === "/profile.html") {
+            if (
+              window.location.pathname === "/profile.html" ||
+              window.location.pathname === "/admonProfile.html"
+            ) {
               window.location.href = "index.html"; // Redirige a la página principal si está en el perfil
             } else {
               window.location.reload(); // Recarga la página si no está en el perfil
