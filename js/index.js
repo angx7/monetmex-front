@@ -64,7 +64,6 @@ function checkUser() {
 
   // Verifica si el usuario está logueado
   if (user) {
-    console.log("Usuario logueado:", user);
     loginLink.textContent = user; // Muestra el nombre del usuario
 
     // Agregar enlace de Cerrar Sesión
@@ -115,13 +114,10 @@ function checkUser() {
       window.location.href = "profile.html"; // Redirige a la página de perfil
     });
   } else {
-    console.log("Usuario no logueado");
     loginLink.textContent = "Iniciar sesión"; // Muestra el texto de "Iniciar sesión"
   }
 
   loginLink.href = "javascript:void(0)"; // Previene que redirija directamente
-
-  console.log("ID del cliente:", clienteId);
 
   // Maneja el clic en el enlace de Iniciar sesión
   loginLink.addEventListener("click", () => {

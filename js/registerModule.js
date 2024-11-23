@@ -1,5 +1,3 @@
-// console.log("registerModule.js");
-
 // Función para registrar un nuevo cliente
 async function register() {
   let nombreCliente = document.getElementById("nombreCliente").value;
@@ -34,7 +32,7 @@ async function register() {
 
     const result = await response.json();
     sessionStorage.setItem("user", result.nombreCliente);
-    console.log(sessionStorage.getItem("user"));
+
     // window.location.href = "index.html";
   } catch (error) {
     // Maneja errores inesperados de manera silenciosa
@@ -77,7 +75,7 @@ async function login() {
     }
 
     const result = await response.json();
-    console.log(result);
+
     sessionStorage.setItem("user", result.nombreCliente);
     sessionStorage.setItem("clienteId", result.clienteId);
     if (result.admon === 1) {
@@ -85,9 +83,6 @@ async function login() {
     } else if (result.admon === 0) {
       sessionStorage.setItem("userType", "user");
     }
-    console.log(sessionStorage.getItem("user"));
-    console.log(sessionStorage.getItem("clienteId"));
-    console.log(sessionStorage.getItem("userType"));
 
     const prevPage = sessionStorage.getItem("prevPage");
     const userType = sessionStorage.getItem("userType");

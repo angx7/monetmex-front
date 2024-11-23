@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function confirmarCompra(paqueteId) {
   const clienteId = sessionStorage.getItem("clienteId");
-  console.log(paqueteId);
-  console.log(clienteId);
 
   Swal.fire({
     title: "Confirmar Compra",
@@ -38,9 +36,6 @@ function confirmarCompra(paqueteId) {
 }
 
 function comprarPaquete(clienteId, paqueteId) {
-  console.log("Comprando paquete...");
-  console.log(clienteId);
-  console.log(paqueteId);
   // Realizar la petición al servidor
   fetch(`http://localhost:3000/paquetes/comprar`, {
     method: "POST",
@@ -56,10 +51,9 @@ function comprarPaquete(clienteId, paqueteId) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       Swal.fire({
-        title: "¡Compra Exitosa!",
-        text: "Se ha realizado la compra del paquete.",
+        title: "¡Pedido Exitoso!",
+        text: "Tienes 24 horas para hacer el depósito.\nCuenta: 25605288882\nClabe:044237256052888824\nBeneficiario: Christian Barzallo Mexicano.",
         icon: "success",
       }).then(() => {
         window.location.reload();

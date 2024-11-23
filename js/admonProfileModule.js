@@ -11,15 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     return; // Detener la ejecución del script
   }
-  console.log("admonProfileModule.js cargado");
 
-  // Referencias a los elementos del DOM para compras de paquetes
+  // Referencias del DOM para compras de paquetes
   const purchasesTableBody = document.getElementById("purchase-list-items");
   const filterButton = document.getElementById("search-purchase-btn");
   const filterInput = document.getElementById("search-purchase-id");
-  const clearPackageFilterButton = document.getElementById("clear-filter-btn"); // Limpiar filtro de paquetes
+  const clearPackageFilterButton = document.getElementById("clear-filter-btn");
 
-  // Referencias a los elementos del DOM para compras de clases
+  // Referencias del DOM para compras de clases
   const classPurchaseTableBody = document.getElementById(
     "student-package-table"
   );
@@ -27,14 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const classFilterInput = document.getElementById("filter-id");
   const clearClassFilterButton = document.getElementById(
     "clear-class-filter-btn"
-  ); // Limpiar filtro de clases
-  // console.log(clearClassFilterButton); // Asegúrate de que no sea null
+  );
+
+  // Referencias del DOM para asistencia
+  const attendanceSelect = document.getElementById("class-select-massive");
+  const attendanceTable = document.getElementById("attendance-table");
+  const saveButton = document.getElementById("save-attendance");
 
   // URLs para las APIs
   const packageApiUrl = "http://localhost:3000/admon/estado";
   const classApiUrl = "http://localhost:3000/admon/clases";
+  const baseUrl = "http://localhost:3000/admon/asistencia";
 
-  // Función para cargar las compras de paquetes
+  // *** FUNCIONES PARA PAQUETES ***
+
   const loadPurchases = async (filterId = null) => {
     try {
       let url = packageApiUrl;
@@ -56,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Función para renderizar las compras de paquetes
   const renderPurchases = (purchases) => {
     purchasesTableBody.innerHTML = "";
 
@@ -106,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Función para aprobar una compra de paquete
   const approvePurchase = async (purchaseId) => {
     try {
       const response = await fetch(`${packageApiUrl}/${purchaseId}/approve`, {
@@ -121,11 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Error al aprobar la compra:", error);
-      Swal.fire("Error", "Hubo un problema al aprobar la compra.", "error");
     }
   };
 
-  // Función para cargar las compras de clases
+  // *** FUNCIONES PARA CLASES ***
+
   const loadClassPurchases = async (filterId = null) => {
     try {
       let url = classApiUrl;
@@ -143,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Función para renderizar las compras de clases
   const renderClassPurchases = (classPurchases) => {
     classPurchaseTableBody.innerHTML = "";
 
@@ -154,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     classPurchases.forEach((purchase) => {
-      console.log(purchase);
       const row = document.createElement("tr");
 
       row.innerHTML = `
@@ -183,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Función para aprobar una compra de clase
   const approveClassPurchase = async (purchaseId) => {
     try {
       const response = await fetch(`${classApiUrl}/${purchaseId}/approve`, {
@@ -198,56 +198,125 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Error al aprobar la compra de clase:", error);
-      Swal.fire(
-        "Error",
-        "Hubo un problema al aprobar la compra de clase.",
-        "error"
-      );
     }
   };
 
-  // Event listeners para filtrar por ID de compra (Paquetes)
+  // *** FUNCIONES PARA ASISTENCIA ***
+
+  const loadClasses = async () => {
+    try {
+      const response = await fetch(`${baseUrl}/horarios`);
+      const classes = await response.json();
+
+      attendanceSelect.innerHTML =
+        '<option value="" disabled selected>Selecciona una clase</option>';
+      classes.forEach((clase) => {
+        const option = document.createElement("option");
+        option.value = clase.id;
+        option.textContent = `${clase.disciplina} - ${clase.diaSemana} - ${clase.horaInicio}`;
+        attendanceSelect.appendChild(option);
+      });
+    } catch (error) {
+      console.error("Error al cargar las clases:", error);
+    }
+  };
+
+  const loadAttendanceData = async (classId) => {
+    try {
+      const response = await fetch(`${baseUrl}/${classId}`);
+      const attendanceData = await response.json();
+
+      attendanceTable.innerHTML = "";
+      attendanceData.forEach((record) => {
+        const row = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = record.nombreCliente;
+        row.appendChild(nameCell);
+
+        const attendanceCell = document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = record.estadoPago === "pagado";
+        checkbox.dataset.recordId = record.id;
+        attendanceCell.appendChild(checkbox);
+        row.appendChild(attendanceCell);
+
+        attendanceTable.appendChild(row);
+      });
+    } catch (error) {
+      console.error("Error al cargar los datos de asistencia:", error);
+    }
+  };
+
+  const saveAttendance = async () => {
+    const classId = attendanceSelect.value;
+
+    if (!classId) {
+      Swal.fire("Atención", "Por favor selecciona una clase.", "warning");
+      return;
+    }
+
+    const attendanceRecords = Array.from(
+      document.querySelectorAll("#attendance-table input[type='checkbox']")
+    ).map((checkbox) => ({
+      id: checkbox.dataset.recordId,
+      asistencia: checkbox.checked ? "asistio" : "falto",
+    }));
+
+    try {
+      const response = await fetch(`${baseUrl}/${classId}/guardar`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ asistencia: attendanceRecords }),
+      });
+
+      if (response.ok) {
+        Swal.fire("Éxito", "Asistencia guardada exitosamente.", "success");
+      } else {
+        Swal.fire("Error", "No se pudo guardar la asistencia.", "error");
+      }
+    } catch (error) {
+      console.error("Error al guardar la asistencia:", error);
+    }
+  };
+
+  // *** LISTENERS ***
+
   filterButton.addEventListener("click", () => {
     const filterId = filterInput.value.trim();
-    if (filterId) {
-      loadPurchases(filterId);
-    } else {
-      Swal.fire(
-        "Atención",
-        "Por favor, introduce un ID para filtrar.",
-        "warning"
-      );
-    }
+    loadPurchases(filterId);
   });
 
-  // Event listeners para filtrar por ID de compra (Clases)
-  classFilterButton.addEventListener("click", () => {
-    const filterId = classFilterInput.value.trim();
-    if (filterId) {
-      loadClassPurchases(filterId);
-    } else {
-      Swal.fire(
-        "Atención",
-        "Por favor, introduce un ID para filtrar.",
-        "warning"
-      );
-    }
-  });
-
-  // Event listener para limpiar filtro de compras de paquetes
   clearPackageFilterButton.addEventListener("click", () => {
-    console.log("Limpiando filtro de compras de clases");
-    classFilterInput.value = "";
-    loadClassPurchases();
-  });
-
-  // Event listener para limpiar filtro de compras de clases
-  clearClassFilterButton.addEventListener("click", () => {
     filterInput.value = "";
     loadPurchases();
   });
 
-  // Cargar compras de paquetes y clases al inicio
+  classFilterButton.addEventListener("click", () => {
+    const filterId = classFilterInput.value.trim();
+    loadClassPurchases(filterId);
+  });
+
+  clearClassFilterButton.addEventListener("click", () => {
+    classFilterInput.value = "";
+    loadClassPurchases();
+  });
+
+  attendanceSelect.addEventListener("change", () => {
+    const classId = attendanceSelect.value;
+    if (classId) {
+      loadAttendanceData(classId);
+    }
+  });
+
+  saveButton.addEventListener("click", saveAttendance);
+
+  // *** INICIALIZACIÓN ***
+
   loadPurchases();
   loadClassPurchases();
+  loadClasses();
 });
