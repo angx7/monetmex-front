@@ -34,9 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveButton = document.getElementById("save-attendance");
 
   // URLs para las APIs
-  const packageApiUrl = "http://localhost:3000/admon/estado";
-  const classApiUrl = "http://localhost:3000/admon/clases";
-  const baseUrl = "http://localhost:3000/admon/asistencia";
+  const packageApiUrl = "http://104.236.112.158:3000/admon/estado";
+  const classApiUrl = "http://104.236.112.158:3000/admon/clases";
+  const baseUrl = "http://104.236.112.158:3000/admon/asistencia";
+
+  // Referencia del DOM para logout
+  const logoutButton = document.getElementById("logout");
 
   // *** FUNCIONES PARA PAQUETES ***
 
@@ -313,6 +316,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   saveButton.addEventListener("click", saveAttendance);
+
+  logoutButton.addEventListener("click", () => {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¿Deseas cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, cerrar sesión",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.clear();
+        window.location.href = "/"; // Redirigir al login
+      }
+    });
+  });
 
   // *** INICIALIZACIÓN ***
 

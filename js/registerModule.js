@@ -11,7 +11,7 @@ async function register() {
     passwordCliente,
   };
   try {
-    const response = await fetch("http://localhost:3000/clientes", {
+    const response = await fetch("http://104.236.112.158:3000/clientes", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -54,7 +54,7 @@ async function login() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/clientes/login", {
+    const response = await fetch("http://104.236.112.158:3000/clientes/login", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

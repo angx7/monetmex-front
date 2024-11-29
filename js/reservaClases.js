@@ -6,7 +6,7 @@ async function fetchUserPackages(userId, category) {
   try {
     const searchTerm = category === "Pilates Reformer" ? "Pilates" : category;
     const response = await fetch(
-      `http://localhost:3000/clases/approved-packages?clienteId=${userId}&searchTerm=${searchTerm}`
+      `http://104.236.112.158:3000/clases/approved-packages?clienteId=${userId}&searchTerm=${searchTerm}`
     );
     const data = await response.json();
 
@@ -20,7 +20,7 @@ async function fetchUserPackages(userId, category) {
 async function fetchClassAvailability(day, category) {
   try {
     const response = await fetch(
-      `http://localhost:3000/clases/horarios?diaSemana=${day}&disciplina=${category}`
+      `http://104.236.112.158:3000/clases/horarios?diaSemana=${day}&disciplina=${category}`
     );
     const data = await response.json();
 
@@ -187,19 +187,22 @@ document
 
     // Realizar la reserva a la API
     try {
-      const response = await fetch("http://localhost:3000/clases/reserve", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          idClase: schedule,
-          idCliente: userId,
-          metodoPago: paymentMethod,
-          paqueteId: selectedPackageId,
-          diaSemana: dayOfWeek,
-        }),
-      });
+      const response = await fetch(
+        "http://104.236.112.158:3000/clases/reserve",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            idClase: schedule,
+            idCliente: userId,
+            metodoPago: paymentMethod,
+            paqueteId: selectedPackageId,
+            diaSemana: dayOfWeek,
+          }),
+        }
+      );
 
       if (response.ok) {
         if (paymentMethod === "Digital" || paymentMethod === "transferencia") {
