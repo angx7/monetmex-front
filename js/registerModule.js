@@ -11,7 +11,7 @@ async function register() {
     passwordCliente,
   };
   try {
-    const response = await fetch("http://104.236.112.158:3000/clientes", {
+    const response = await fetch("https://104.236.112.158:3000/clientes", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -54,13 +54,16 @@ async function login() {
   };
 
   try {
-    const response = await fetch("http://104.236.112.158:3000/clientes/login", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://104.236.112.158:3000/clientes/login",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (!response.ok) {
       const errorData = await response.json();

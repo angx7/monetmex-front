@@ -19,7 +19,7 @@ async function obtenerPaquetes() {
 
   try {
     const response = await fetch(
-      `http://104.236.112.158:3000/paquetes/${clienteId}`
+      `https://104.236.112.158:3000/paquetes/${clienteId}`
     );
     if (!response.ok) throw new Error("Error al obtener los paquetes.");
     return await response.json();

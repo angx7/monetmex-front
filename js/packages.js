@@ -37,7 +37,7 @@ function confirmarCompra(paqueteId) {
 
 function comprarPaquete(clienteId, paqueteId) {
   // Realizar la petición al servidor
-  fetch(`http://104.236.112.158:3000/paquetes/comprar`, {
+  fetch(`https://104.236.112.158:3000/paquetes/comprar`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
