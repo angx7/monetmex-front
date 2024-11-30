@@ -82,6 +82,7 @@ function showAvailablePackages(category) {
   } else {
     const option = document.createElement("option");
     option.textContent = "No hay paquetes disponibles";
+    option.value = "";
     option.disabled = true;
     packageSelect.appendChild(option);
   }
@@ -182,6 +183,10 @@ document
     let paymentMethod = document.getElementById("paymentMethod").value;
     const packageSelect = document.getElementById("packageSelect");
     const selectedPackageId = packageSelect.value || null;
+
+    console.log("Reservando clase...");
+    console.log("packageSelect", packageSelect);
+    console.log("selectedPackageId", selectedPackageId);
 
     if (!dayOfWeek || !schedule) {
       alert("Por favor selecciona un día de la semana y un horario.");
