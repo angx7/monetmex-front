@@ -18,9 +18,7 @@ async function obtenerPaquetes() {
   }
 
   try {
-    const response = await fetch(
-      `https://104.236.112.158:3000/paquetes/${clienteId}`
-    );
+    const response = await fetch(`https://monetback.com/paquetes/${clienteId}`);
     if (!response.ok) throw new Error("Error al obtener los paquetes.");
     return await response.json();
   } catch (error) {

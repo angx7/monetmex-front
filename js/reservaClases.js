@@ -1,12 +1,14 @@
 // Variables globales
 let userPackages = {};
+console.log("reservaClases.js");
+console.log(sessionStorage.getItem("clienteId"));
 
 // Función para obtener paquetes de usuario desde la API
 async function fetchUserPackages(userId, category) {
   try {
     const searchTerm = category === "Pilates Reformer" ? "Pilates" : category;
     const response = await fetch(
-      `https://104.236.112.158:3000/clases/approved-packages?clienteId=${userId}&searchTerm=${searchTerm}`
+      `https://monetback.com/clases/approved-packages?clienteId=${userId}&searchTerm=${searchTerm}`
     );
     const data = await response.json();
 
@@ -15,12 +17,11 @@ async function fetchUserPackages(userId, category) {
     console.error("Error fetching user packages:", error);
   }
 }
-
 // Función para obtener la disponibilidad de clases desde la API
 async function fetchClassAvailability(day, category) {
   try {
     const response = await fetch(
-      `https://104.236.112.158:3000/clases/horarios?diaSemana=${day}&disciplina=${category}`
+      `https://monetback.com/clases/horarios?diaSemana=${day}&disciplina=${category}`
     );
     const data = await response.json();
 
@@ -120,6 +121,13 @@ document
 // Abrir el modal de reserva y cargar categoría
 document.querySelectorAll(".reserve-button").forEach((button) => {
   button.addEventListener("click", async function () {
+    if (!userId) {
+      alert(
+        "Error: No se encontró el ID del cliente. Inicia sesión nuevamente."
+      );
+      return;
+    }
+
     const category = this.getAttribute("data-category");
     document.getElementById("category").value = category;
 
@@ -187,22 +195,19 @@ document
 
     // Realizar la reserva a la API
     try {
-      const response = await fetch(
-        "https://104.236.112.158:3000/clases/reserve",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            idClase: schedule,
-            idCliente: userId,
-            metodoPago: paymentMethod,
-            paqueteId: selectedPackageId,
-            diaSemana: dayOfWeek,
-          }),
-        }
-      );
+      const response = await fetch("https://monetback.com/clases/reserve", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          idClase: schedule,
+          idCliente: userId,
+          metodoPago: paymentMethod,
+          paqueteId: selectedPackageId,
+          diaSemana: dayOfWeek,
+        }),
+      });
 
       if (response.ok) {
         if (paymentMethod === "Digital" || paymentMethod === "transferencia") {

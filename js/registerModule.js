@@ -11,7 +11,7 @@ async function register() {
     passwordCliente,
   };
   try {
-    const response = await fetch("https://104.236.112.158:3000/clientes", {
+    const response = await fetch("https://monetback.com/clientes", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -32,6 +32,22 @@ async function register() {
 
     const result = await response.json();
     sessionStorage.setItem("user", result.nombreCliente);
+    sessionStorage.setItem("clienteId", result.clienteId);
+    if (result.admon === 1) {
+      sessionStorage.setItem("userType", "admin");
+    } else if (result.admon === 0) {
+      sessionStorage.setItem("userType", "user");
+    }
+    const prevPage = sessionStorage.getItem("prevPage");
+    const userType = sessionStorage.getItem("userType");
+
+    if (userType === "admin") {
+      window.location.href = "admonProfile.html"; // Redirigir a la página de administrador
+    } else if (prevPage && !prevPage.includes("registerPage.html")) {
+      window.location.href = prevPage; // Redirigir a la página anterior
+    } else {
+      window.location.href = "index.html"; // Redirigir al índice si no hay página previa
+    }
 
     // window.location.href = "index.html";
   } catch (error) {
@@ -54,16 +70,13 @@ async function login() {
   };
 
   try {
-    const response = await fetch(
-      "https://104.236.112.158:3000/clientes/login",
-      {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("https://monetback.com/clientes/login", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       const errorData = await response.json();

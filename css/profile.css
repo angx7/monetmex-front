@@ -1,3 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #e6e0db;
+
+  min-height: 100vh;
+
+  nav {
+    padding: 1em;
+    /* 16px */
+  }
+
+  main {
+    flex: 1;
+  }
+
+  footer {
+    padding: 1em;
+  }
+}
 :root {
   --main-bg-color: #e6e1db;
   --text-color: #5c4533;

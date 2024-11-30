@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveButton = document.getElementById("save-attendance");
 
   // URLs para las APIs
-  const packageApiUrl = "https://104.236.112.158:3000/admon/estado";
-  const classApiUrl = "https://104.236.112.158:3000/admon/clases";
-  const baseUrl = "https://104.236.112.158:3000/admon/asistencia";
+  const packageApiUrl = "https://monetback.com/admon/estado";
+  const classApiUrl = "https://monetback.com/admon/clases";
+  const baseUrl = "https://monetback.com/admon/asistencia";
 
   // Referencia del DOM para logout
   const logoutButton = document.getElementById("logout");
