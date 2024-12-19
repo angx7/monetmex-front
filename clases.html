@@ -80,12 +80,14 @@
             class="reserve-button"
             data-category="Pilates Reformer"
             onclick="openReservationForm(this)"
+            data-bs-toggle="modal"
+            data-bs-target="#reservationModal"
           >
             Reservar
           </button>
         </div>
       </section>
-
+    
       <!-- Sección 2: Clases de Barre -->
       <section class="pilates-section">
         <div class="image-container Barre-class">
@@ -103,12 +105,14 @@
             class="reserve-button"
             data-category="Barre"
             onclick="openReservationForm(this)"
+            data-bs-toggle="modal"
+            data-bs-target="#reservationModal"
           >
             Reservar
           </button>
         </div>
       </section>
-
+    
       <!-- Sección 3: Yoga -->
       <section class="pilates-section">
         <div class="image-container yoga-class">
@@ -125,28 +129,23 @@
           <button
             class="reserve-button"
             data-category="Yoga"
-            disabled
             onclick="openReservationForm(this)"
+            data-bs-toggle="modal"
+            data-bs-target="#reservationModal"
+            disabled
           >
             Reservar
           </button>
         </div>
       </section>
     </main>
-
+    
     <!-- Modal de reserva -->
-    <div
-      class="modal fade"
-      id="reservationModal"
-      tabindex="-1"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="reservationModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="reservationModalLabel">
-              Reservar Clase
-            </h5>
+            <h5 class="modal-title" id="reservationModalLabel">Reservar Clase</h5>
             <button
               type="button"
               class="btn-close"
@@ -155,42 +154,23 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="reservationForm">
+            <form id="reservationForm" onsubmit="submitReservation(event)">
               <div class="mb-3">
                 <label for="category" class="form-label">Clase</label>
-                <input
-                  type="text"
-                  id="category"
-                  class="form-control"
-                  readonly
-                />
+                <input type="text" id="category" class="form-control" readonly />
               </div>
               <div class="mb-3">
-                <label for="dayOfWeek" class="form-label"
-                  >Día de la Semana</label
-                >
-                <select id="dayOfWeek" class="form-select" required>
-                  <option value="" disabled selected>Selecciona un día</option>
-                  <option value="Lunes">Lunes</option>
-                  <option value="Martes">Martes</option>
-                  <option value="Miércoles">Miércoles</option>
-                  <option value="Jueves">Jueves</option>
-                  <option value="Viernes">Viernes</option>
-                  <option value="Sábado">Sábado</option>
-                </select>
+                <label for="date" class="form-label">Fecha</label>
+                <input type="date" id="date" class="form-control" required />
               </div>
               <div class="mb-3">
                 <label for="schedule" class="form-label">Horario</label>
                 <select id="schedule" class="form-select" required>
-                  <option value="" disabled selected>
-                    Selecciona un horario
-                  </option>
+                  <option value="" disabled selected>Selecciona un horario</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="paymentMethod" class="form-label"
-                  >Método de Pago</label
-                >
+                <label for="paymentMethod" class="form-label">Método de Pago</label>
                 <select id="paymentMethod" class="form-select">
                   <option value="Caja">Efectivo</option>
                   <option value="transferencia">Transferencia</option>
@@ -201,22 +181,38 @@
                 una clase automáticamente.
               </div>
               <div class="mb-3">
-                <label for="packageSelect" class="form-label"
-                  >Selecciona tu paquete</label
-                >
+                <label for="packageSelect" class="form-label">Selecciona tu paquete</label>
                 <select id="packageSelect" class="form-select">
                   <!-- Aquí se mostrarán los paquetes disponibles -->
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary">
-                Confirmar Reserva
-              </button>
+              <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
             </form>
           </div>
         </div>
       </div>
     </div>
-
+    
+    <!--JS-->
+    
+    <script>
+      
+      function openReservationForm(button) {
+        const category = button.getAttribute('data-category');
+        document.getElementById('category').value = category;
+      }
+    
+      
+      function submitReservation(event) {
+        event.preventDefault();
+        alert('Reserva confirmada');
+        const form = document.getElementById('reservationForm');
+        form.reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('reservationModal'));
+        modal.hide();
+      }
+    </script>
+    
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo">
