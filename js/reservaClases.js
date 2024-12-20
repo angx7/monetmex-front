@@ -21,6 +21,7 @@ async function fetchUserPackages(userId, category) {
 async function fetchClassAvailability(day, category) {
   try {
     const response = await fetch(
+      //https://monetback.com/clases/horarios?fecha=${date}&disciplina=${category}
       `https://monetback.com/clases/horarios?diaSemana=${day}&disciplina=${category}`
     );
     const data = await response.json();

@@ -84,3 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   obtenerPaquetes().then((paquetes) => actualizarPaquetes(paquetes));
 });
+
+// cancelar reserva
+// https://monetback.com/clientes/cancelar
+// DELETE
+// body: { "claseId": "int", "clienteId": "int", "fecha": "String" }
