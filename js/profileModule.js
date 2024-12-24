@@ -83,9 +83,56 @@ document.addEventListener("DOMContentLoaded", () => {
   if (encabezado) encabezado.textContent = obtenerSaludo();
 
   obtenerPaquetes().then((paquetes) => actualizarPaquetes(paquetes));
+
+  obtenerProximaClase().then((clase) => {
+    const proximaClase = document.getElementById("proximaClase");
+    if (!proximaClase) {
+      console.error("Elemento con id 'proximaClase' no encontrado en el DOM.");
+      return;
+    }
+
+    if (clase.length === 0) {
+      proximaClase.innerHTML = `
+        <li class="list-group-item text-center">No tienes clases reservadas.</li> 
+      `;
+    } else {
+      proximaClase.innerHTML = clase
+        .map(
+          (c) => `
+          <li class="list-group-item">
+            <strong>Clase:</strong> ${c.nombreClase}<br>
+            <strong>Fecha:</strong> ${c.fecha}<br>
+            <strong>Hora:</strong> ${c.hora}
+          </li>`
+        )
+        .join("");
+    }
+  });
 });
+
+async function obtenerProximaClase() {
+  const clienteId = sessionStorage.getItem("clienteId");
+  if (!clienteId) {
+    console.error("No se encontró el ID del cliente en el sessionStorage.");
+    return [];
+  }
+
+  try {
+    const response = await fetch(`https://monetback.com/clientes/nextclass?clienteId=${clienteId}`);
+    if (!response.ok) throw new Error("Error al obtener próximas clases.");
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.error("Error al realizar la solicitud:", error);
+    return [];
+  }
+}
+
+
 
 // cancelar reserva
 // https://monetback.com/clientes/cancelar
 // DELETE
 // body: { "claseId": "int", "clienteId": "int", "fecha": "String" }
+
+//proximo clase 

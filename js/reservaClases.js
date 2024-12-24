@@ -18,11 +18,11 @@ async function fetchUserPackages(userId, category) {
   }
 }
 // Función para obtener la disponibilidad de clases desde la API
-async function fetchClassAvailability(day, category) {
+async function fetchClassAvailability(date, category) {
   try {
     const response = await fetch(
       //https://monetback.com/clases/horarios?fecha=${date}&disciplina=${category}
-      `https://monetback.com/clases/horarios?diaSemana=${day}&disciplina=${category}`
+      `https://monetback.com/clases/horarios?diaSemana=${date}&disciplina=${category}`
     );
     const data = await response.json();
 
